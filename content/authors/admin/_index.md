@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 
+title: Philipp Petermeier
 
 # Full name (for SEO)
 first_name: Philipp
@@ -17,7 +17,7 @@ superuser: true
 highlight_name: false
 
 # Role/position/tagline
-role: 'Searching for an interesting postion to work in'
+role: 'Seeker'
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -28,93 +28,101 @@ organizations:
 profiles:
   - icon: brands/github
     url: https://github.com/PPetermeier
-    label: Find me here
+    label: Find me here on GitHub
   - icon: brands/x
     url: https://x.com/infornomics
     label: Find me on Twitter
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/philipp-petermeier-6ba469229
     label: Find me on LinkedIn
-  - icon: far/envelope
-    url: 'mailto:your-email@example.com'
-    label: E-mail Me
+  - icon: custom/substack
+    url: https://infornomics.substack.com/
+    label: Find me on Substack
+  - icon_pack: fas
+    icon: envelope
+    url: 'mailto:p.petermeier@posteo.de'
+    label: Send me a mail
+
+  - icon: academicons/cv
+    url: uploads/CV_for_Website.pdf
+    label: Download my CV  
+
 
 interests:
-  - Climate change and Climate policy 
-  - Macro- and political economy 
-  - Modeling in one or both of those areas 
+  - Data Science & Machine Learning 
+  - Reinforcement Learning
+  - Modeling of Processes & Data
+  - Climate change & -policy 
+  - Macro- & Political economy 
   - Industrial policy 
-  - Game theory 
+  - Game & Decisions theory
+  - Market & Mechanism Design  
   - Open Science & Reproduceability
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: "Python"
     items:
       - name: Python
         description: ''
         percent: 90
-        icon: code-bracket
+        icon: devicon/python
       - name: numpy
         description: ''
-        percent: 15
-        icon: circle-stack        
+        percent: 70
+        icon: devicon/numpy
       - name: pandas
         description: ''
-        percent: 60
-        icon: circle-stack
+        percent: 80
+        icon: devicon/pandas
       - name: scikit-learn
         description: ''
-        percent: 60
-        icon: chart-bar
+        percent: 70
+        icon: devicon/scikitlearn
       - name: keras
         description: ''
-        percent: 50
-        icon: chart-bar
+        percent: 55
+        icon: devicon/keras
       - name: matplotlib & Seaborn
         description: ''
-        percent: 65
-        icon: chart-bar
+        percent: 80
+        icon: devicon/matplotlib
+      - name: Jupyter Notebooks
+        description: ''
+        percent: 70
+        icon: devicon/jupyter
+
+  - name: "Other"
+    items:
       - name: SQL
         description: ''
         percent: 40
-        icon: circle-stack
+        icon: devicon/mysql
       - name: MongoDB
         description: ''
-        percent: 65
-        icon: circle-stack
+        percent: 80
+        icon: devicon/mongodb
       - name: R
         description: ''
-        percent: 20
-        icon: circle-stack
+        percent: 30
+        icon: devicon/r
       - name: Julia
         description: ''
-        percent: 60
-        icon: circle-stack
+        percent: 45
+        icon: devicon/julia
       - name: Git & CI/CD
         description: ''
-        percent: 50
-        icon: circle-stack
-
-
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
+        percent: 65
+        icon: devicon/git
+      - name: Markdown & LaTeX
         description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
+        percent: 85
+        icon: devicon/latex
+      - name: UML & Architecture
         description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
-
+        percent: 85
+        icon: devicon/unifiedmodelinglanguage
 
 education:
   - area: BA in Business Information Systems
@@ -136,11 +144,6 @@ education:
         - Introduction to Decision and Game Theory
         - Introduction to Julia
 
-#    button:
-#      text: 'Read Thesis'
-#      url: 'https://example.com'
-
-
 work:
   - position: Working Student 
     company_name: Fraunhofer IEE, Kassel
@@ -149,52 +152,22 @@ work:
     date_start: 2022-02-01
     date_end: 2024-03-31
     summary: |2-
-      Development of a scientific Python Package implementing a Reinforcement Learning Environment for Electricity Trading, including:
-      - conception and implementation 
-      - benchmarking and adjustment of development process to optimise runtime performance
-      - modeling of necessary Data Structure 
-      - setting up of needed MongoDB 
-      - planning, construction and deployment of ETL Pipelines  
-      - orchestration of first experiments with Ray on on-premise HPC-cluster to assure runtime performance
-      - writing process of a paper documenting first results
+      Developed a scientific Python package to implement a reinforcement learning environment for electricity trading. This included:
+      - Design and implementation 
+      - Benchmarking and adapting the development process to optimise runtime performance
+      - Modelling the appropriate data structure  
+      - Setup of the required MongoDB
+      - ETL pipeline design, construction and deployment
+      - Orchestrate initial experiments using Ray on an on-premises HPC cluster to ensure runtime performance
+      - Participation in the writing process of a paper documenting initial results
 
 
 languages:
-  - name: English
-    percent: 85
   - name: German
     percent: 100
+  - name: English
+    percent: 90
 
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-#awards:
-#  - title: Neural Networks and Deep Learning
-#    url: https://www.coursera.org/learn/neural-networks-deep-learning
-#    date: '2023-11-25'
-#    awarder: Coursera
-#icon: coursera
-#    summary: |
-#      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-#  - title: Blockchain Fundamentals
-#    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-#    date: '2023-07-01'
-#    awarder: edX
-#    icon: edx
-#    summary: |
-#      Learned:
-#      - Synthesize your own blockchain solutions
-#      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-#      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-#  - title: 'Object-Oriented Programming in R'
-#    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-#    certificate_url: https://www.datacamp.com
-#    date: '2023-01-21'
-#    awarder: datacamp
-#    icon: datacamp
-#    summary: |
-#      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
 ## About Me

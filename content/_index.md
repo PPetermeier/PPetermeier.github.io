@@ -6,120 +6,81 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "rem"
 
 sections:
   - block: resume-biography-3
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-      text: ""
+      text: "Hey, nice of you to stop by.
+      I'm aggregating my different outputs here. 
+
+
+      Right now finding a great team of wonderful and smart people to work with on something important is on top of my mind. 
+      
+      
+      Maybe you or someone you know could fit that description? I'd love to hear from you. 
+      
+
+      You can visit my [Education & Skills](skills) section to get an idea what I could do for you and your team.
+
+
+      Otherwise I hope you find the things on here interesting, useful or at least entertaining."
       # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
     design:
       css_class: dark
       background:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: stacked-peaks.svg
+          filename: stacked-waves.svg
           filters:
-            brightness: 1.0
+            brightness: 0.75
           size: cover
           position: center
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+      title: '🗺 Overview'
+      subtitle: 'A short orientation what to expect in which of my feeds'
+      text: "A short guide what to expect behind the icons and links on the top. This overview will get updated if need be. 
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+      - The programming sideprojects that I deemed worthy are public on my [**Github**](https://github.com/PPetermeier) page where this pages itself is also hosted.
+
+      - I'm most active on [**Twitter**](https://x.com/infornomics), where I aggregate posts according to my outlined interests and occasionally engage with others, hopefully to the benefit of both of us and others.
+
+      - [**LinkedIn**](https://www.linkedin.com/in/philipp-petermeier-6ba469229) is mainly a platform for professional contacts and more of a communication channel than a public space for me.
+
+      - On my [**Substack**](https://infornomics.substack.com/) you will find longer discussions about various topics that are on my mind and needed to get pinned down in writing.
+
+      - You can <a href=\"mailto:p.petermeier@posteo.de\">contact me directly</a> through my mail adress embedded.
+
+      - My <a href=\"uploads/CV_for_Website.pdf\" target=\"_blank\">CV</a> without private information can be downloaded on the last icon, if the [Education & Skills](skills) leaves you wanting for something more formal."
     design:
-      columns: '1'
-  - block: collection
-    id: papers
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - event
-    design:
-      view: article-grid
-      columns: 1
-  - block: collection
-    id: news
-    content:
-      title: Recent News
-      subtitle: ''
-      text: ''
-      # Page type to display. E.g. post, talk, publication...
-      page_type: post
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 5
-      # Filter on criteria
-      filters:
-        author: ""
-        category: ""
-        tag: ""
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ""
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
-    design:
-      # Choose a layout view
-      view: date-title-summary
-      # Reduce spacing
       spacing:
-        padding: [0, 0, 0, 0]
-  - block: cta-card
-    demo: true # Only display this section in the Hugo Blox Builder demo site
+    # Customize the section spacing. Order is top, right, bottom, left.
+        padding: ['10px', '0', '10px', '0']
+        show_skill_percentage: true
+  - block: resume-skills
     content:
-      title: 👉 Build your own academic website like this
-      text: |-
-        This site is generated by Hugo Blox Builder - the FREE, Hugo-based open source website builder trusted by 250,000+ academics like you.
-
-        <a class="github-button" href="https://github.com/HugoBlox/hugo-blox-builder" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star HugoBlox/hugo-blox-builder on GitHub">Star</a>
-
-        Easily build anything with blocks - no-code required!
-        
-        From landing pages, second brains, and courses to academic resumés, conferences, and tech blogs.
-      button:
-        text: Get Started
-        url: https://hugoblox.com/templates/
+      title: Skills
+      username: admin
     design:
-      card:
-        # Card background color (CSS class)
-        css_class: "bg-primary-700"
-        css_style: ""
+      spacing:
+    # Customize the section spacing. Order is top, right, bottom, left.
+        padding: ['10px', '0', '10px', '0']
+        show_skill_percentage: true
+
+
+
+  - block: resume-languages
+    content:
+      title: Languages
+      username: admin
+      design:
+        spacing:
+    # Customize the section spacing. Order is top, right, bottom, left.
+        padding: ['10px', '0', '10px', '0']
+        show_skill_percentage: true
 ---
