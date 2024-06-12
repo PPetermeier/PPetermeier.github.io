@@ -8,5 +8,8 @@ main:
     url: /
     weight: 10
   - name: Education & Skills
-    url: skills/
+    url: Skills/
     weight: 20
+  - name: Ambitions
+    url: Ambitions/
+    weight: 30

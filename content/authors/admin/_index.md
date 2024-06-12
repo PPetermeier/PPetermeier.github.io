@@ -42,7 +42,6 @@ profiles:
     icon: envelope
     url: 'mailto:p.petermeier@posteo.de'
     label: Send me a mail
-
   - icon: academicons/cv
     url: uploads/CV_for_Website.pdf
     label: Download my CV  
@@ -52,10 +51,10 @@ interests:
   - Data Science & Machine Learning 
   - Reinforcement Learning
   - Modeling of Processes & Data
-  - Climate change & -policy 
-  - Macro- & Political economy 
-  - Industrial policy 
-  - Game & Decisions theory
+  - Climate Change & -Policy 
+  - Macro- & Political Economy 
+  - Industrial Policy 
+  - Game & Decisions Theory
   - Market & Mechanism Design  
   - Open Science & Reproduceability
 
@@ -163,13 +162,14 @@ work:
 
 
 languages:
-  - name: German
+  - name: 🇩🇪 German
     percent: 100
-  - name: English
+  - name: 🇬🇧 English
     percent: 90
 
 ---
 
 ## About Me
 
-tbd
+I have a BA Sci in Business Information Systems with a focus on Data Science and Data Engineering specialising in Reinforcement Learning. \
+I'm interested in formal modeling related to Climate Change & -Policy as well as  Macro- & Political Economy, though not exclusively.

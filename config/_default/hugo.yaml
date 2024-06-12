@@ -41,6 +41,10 @@ imaging:
   quality: 80
   anchor: Smart
 timeout: 600000
+cascade:
+  values:
+    comments: false
+    profile: false
 taxonomies:
   author: authors
   tag: tags

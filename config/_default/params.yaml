@@ -6,7 +6,7 @@
 # Appearance
 appearance:
   mode: system
-  color: emerald
+  color: green
 
 # SEO
 marketing:
@@ -15,7 +15,7 @@ marketing:
     local_business_type: ""
     org_name: ""
     description: "Personal Website of Philipp Petermeier, bundeling all different media accounts."
-    twitter: "GetResearchDev"
+    twitter: "@infornomics"
   analytics:
     google_analytics: ""
     baidu_tongji: ""
@@ -32,10 +32,15 @@ header:
     enable: true
     blox: "navbar"
     fixed_to_top: true
-    show_search: true
+    show_search: false
     show_theme_chooser: true
     logo:
       text: "Infornomics"
+    highlight_active_link: true
+    design:
+      color: blue
+      background:
+        css_class: blue
 
 # Site footer
 footer:
@@ -54,7 +59,21 @@ locale:
 
 # Site features
 features:
+  backlinks: false
+  show_date: true
+  reading_time: false
+  share: false
+  profile: false
+  commentable: false
+  editable: false
+  pager: false
+  show_related: false
+  show_breadcrumb: false
   math:
-    enable: false
+    enable: true
   privacy_pack:
-    enable: false
+    enable: true
+
+extensions:
+  academicons:
+    enable: true
