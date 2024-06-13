@@ -26,10 +26,11 @@ sections:
       Maybe you or someone you know could fit that description? I'd love to hear from you. 
       
 
-      You can visit my [Education & Skills](skills) section to get an idea what I could do for you and your team.
+      You can visit my [Education & Skills](/skills) section to get an idea what I could do for you and your team.
 
 
       Otherwise I hope you find what I aggregated here interesting, useful or at least entertaining."
+      
       # Show a call-to-action button under your biography? (optional)
     design:
       css_class: dark
@@ -47,19 +48,26 @@ sections:
     content:
       title: '🗺 Overview'
       subtitle: 'A short orientation what to expect in which of my feeds'
-      text: "A short guide what to expect behind the icons and links on the top. This overview will get updated if need be. 
+      text: "
+      A brief guide what you can expect behind the icons and links at the top of this page. This overview will get updated as needed. 
 
-      - The programming sideprojects that I deemed worthy are public on my {{< icon name=\"brands/github\" >}}[**Github**](https://github.com/PPetermeier) page where this pages itself is also hosted.
 
-      - I'm most active on {{< icon name=\"brands/twitter\" >}}[**Twitter**](https://x.com/infornomics), where I aggregate posts according to my outlined interests and occasionally engage with others, hopefully to the benefit of both of us and others.
+          -  The programming sideprojects that I consider worthy are publicly available  on my {{< icon name=\"brands/github\" >}}[**Github**](https://github.com/PPetermeier) page where this pages is also hosted.
 
-      - {{< icon name=\"brands/linkedin\" >}}[**LinkedIn**](https://www.linkedin.com/in/philipp-petermeier-6ba469229) is mainly a platform for professional contacts and more of a communication channel than a public space for me.
 
-      - On my {{< icon name=\"custom/substack\" >}}[**Substack**](https://infornomics.substack.com/) you will find longer discussions about various topics that are on my mind and needed to get pinned down in writing.
+           - I'm most active on {{< icon name=\"brands/twitter\" >}}[**Twitter**](https://x.com/infornomics), where I aggregate posts according      to my outlined interests and occasionally engage with others,              hopefully to the benefit of ourselfs and others.
 
-      - You can{{< icon name=\"envelope\" >}} <a href=\"mailto:p.petermeier@posteo.de\">contact me directly</a> through my mail adress embedded.
 
-      - My <a href=\"uploads/CV_for_Website.pdf\" target=\"_blank\">CV</a> without private information can be downloaded on the last icon, if the [Education & Skills](skills) leaves you wanting for something more formal."
+          - {{< icon name=\"brands/linkedin\" >}}[**LinkedIn**](https://www.linkedin.com/in/philipp-petermeier-6ba469229) is mainly a professional networking platform and  of a      communication channel than a public space for me.
+
+
+          - On my {{< icon name=\"custom/substack\" >}}[**Substack**](https://infornomics.substack.com/) you will find longer discussions on various           topics that have been on my mind and needed to be put down in      writing.
+
+
+        - You can{{< icon name=\"envelope\" >}} <a href=\"mailto:p.petermeier@posteo.de\">contact me directly</a> via my email adress.
+
+
+          - My <a href=\"uploads/CV_for_Website.pdf\" target=\"_blank\">CV</a> without private information can be downloaded from the last icon, if the [Education & Skills](skills) leaves you wanting something more formal."
     design:
       spacing:
     # Customize the section spacing. Order is top, right, bottom, left.

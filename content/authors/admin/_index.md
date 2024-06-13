@@ -126,6 +126,8 @@ skills:
 education:
   - area: BA in Business Information Systems
     institution: Technische Hochschule Mittelhessen
+    company_url: www.thm.de
+    company_logo: thm.svg
     date_start: 2018-10-01
     date_end: 2024-03-31
     summary: |
@@ -146,8 +148,8 @@ education:
 work:
   - position: Working Student 
     company_name: Fraunhofer IEE, Kassel
-    company_url: https://www.iee.fraunhofer.de/
-    company_logo: uploads/Logo_IEE_rgb.png
+    company_url: https://www.iee.fraunhofer.de
+    company_logo: 22_iee_web.svg
     date_start: 2022-02-01
     date_end: 2024-03-31
     summary: |2-

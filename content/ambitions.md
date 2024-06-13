@@ -86,7 +86,7 @@ ___
 
 ___
 
-  &nbsp;&nbsp;&nbsp;&nbsp; Tiny Machine Learning, see [here on IEEE](https://ieeexplore.ieee.org/document/10284551) and [here on arXiv](https://arxiv.org/abs/2403.19076)
+  &nbsp;&nbsp;&nbsp;&nbsp; Tiny Machine Learning, see [here on IEEE](https://ieeexplore.ieee.org/document/10284551)
 
 
 ___
