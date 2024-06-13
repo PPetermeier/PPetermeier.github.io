@@ -4,6 +4,7 @@ title: ""
 date: 2022-10-24
 summary: Introductory overview to this website, my interests, education and skills
 type: landing
+draft: false
 
 design:
   # Default section spacing
