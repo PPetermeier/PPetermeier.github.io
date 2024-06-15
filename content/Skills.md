@@ -14,7 +14,6 @@ sections:
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-      
       # Show a call-to-action button under your biography? (optional)
     design:
       css_class: dark
@@ -31,20 +30,19 @@ sections:
   - block: markdown
     content:
       title: "What I experienced so far"
-      text: "  I spent a lot of time studying humanities with a focus on philosophy, only to change course and start my BA to learn how to build complex things with a clear purpose using software.
-      
+      text: |
+        I spent a lot of time studying humanities with a focus on philosophy, only to change course and start my B.S. to learn how to build complex things with a clear purpose using software.
+        
 
-      This part of my education is not listed here, mainly because I find it difficult to explain what concrete practical skills I have acquired during my time there. 
-
-
-      At the same time, I'm sure that my experiences have structured many of my cognitive processes and views in a fundamental way, and have made me a much better software engineer, developer, modeller, team member and human being.    
+        This part of my education is not listed here, mainly because I find it difficult to explain what concrete practical skills I have acquired during my time there. 
 
 
-      If you are curious about this side of me, I would encourage you to visit the [About this place](https://infornomics.substack.com/p/about-me)-Section of my substack. How I think about things I find interesting can be seen in the posts themselves. I hope you like it.
+        At the same time, I'm sure that my experiences have structured many of my cognitive processes and views in a fundamental way, and have made me a much better software engineer, developer, modeller, team member and human being.    
 
-        ___
 
-      "    
+        If you are curious about this side of me, I would encourage you to visit the [About this place](https://infornomics.substack.com/p/about-me)-Section of my substack. How I think about things I find interesting can be seen in the posts themselves. I hope you like it.
+
+        ___    
       design:
       spacing:
     # Customize the section spacing. Order is top, right, bottom, left.

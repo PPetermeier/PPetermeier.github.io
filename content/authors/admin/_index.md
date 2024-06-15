@@ -126,41 +126,51 @@ skills:
 education:
   - area: BA in Business Information Systems
     institution: Technische Hochschule Mittelhessen
-    company_url: www.thm.de
-    company_logo: thm.svg
+    company_url: 
+    company_logo: thm
     date_start: 2018-10-01
     date_end: 2024-03-31
-    summary: |
+    summary: |2-
+      <a href="https://www.thm.de/site/en/education/our-courses/business-informatics-bachelor-bsc-mnd-friedberg.html" target="_blank">
+      <span style="font-size: 5em;">{{< icon name="custom/thm_logo" >}}</span>
+      </a>
+
       Final Grade: 2.2 (78%)
       210 CP (7 Semesters)
+      
+            
 
       Thesis: 
       "A Deep Reinforcement Learning Environment for the Limit Orderbook Intraday Electricity Market:
       Development and efficient Implementation"
       Grade: 1,2 (92%) 
 
-      Relevant Courses:  
+      Elective modules:  
         - Introduction to Machine Learning 
         - Predictive Analytics with Python
         - Introduction to Decision and Game Theory
         - Introduction to Julia
 
 work:
-  - position: Working Student 
-    company_name: Fraunhofer IEE, Kassel
-    company_url: https://www.iee.fraunhofer.de
-    company_logo: 22_iee_web.svg
+  - position: Intern and Working Student 
+    company_name: ""
+    company_url: ""
+    company_logo: iee_logo
     date_start: 2022-02-01
     date_end: 2024-03-31
     summary: |2-
+      <a href="https://www.iee.fraunhofer.de/en.html" target="_blank">
+          <span style="font-size: 5em;">{{< icon name="custom/iee_logo" >}}</span>
+      </a>
+
       Developed a scientific Python package to implement a reinforcement learning environment for electricity trading. This included:
       - Design and implementation 
       - Benchmarking and adapting the development process to optimise runtime performance
       - Modelling the appropriate data structure  
-      - Setup of the required MongoDB
-      - ETL pipeline design, construction and deployment
+      - Setting up the required MongoDB
+      - Designing, building and deploying the ETL-Pipeline
       - Orchestrate initial experiments using Ray on an on-premises HPC cluster to ensure runtime performance
-      - Participation in the writing process of a paper documenting initial results
+      - Participate in the writing of a paper documenting initial results
 
 
 languages:
@@ -171,7 +181,8 @@ languages:
 
 ---
 
-## About Me
+### About Me
 
-I have a BA Sci in Business Information Systems with a focus on Data Science and Data Engineering specialising in Reinforcement Learning. \
-I'm interested in formal modeling related to Climate Change & -Policy as well as  Macro- & Political Economy, though not exclusively.
+I have a **B.S. in Business Information Systems** with a focus on *Data Science* and *Data Engineering* specialising in *Reinforcement Learning*. \
+I'm interested in data and models related to energy systems and the green transition, bioinformatics and materials science. \
+In my spare time I am amateurishly dabbling in climate change and policy as well as  macro- and political economy, though not exclusively.

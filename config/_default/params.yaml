@@ -36,7 +36,7 @@ header:
     show_theme_chooser: true
     logo:
       text: "Infornomics"
-    highlight_active_link: true
+    highlight_active_link: false
     design:
       color: blue
       background:
@@ -60,7 +60,7 @@ locale:
 # Site features
 features:
   backlinks: false
-  show_date: true
+  show_date: false
   reading_time: false
   share: false
   profile: false
