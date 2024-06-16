@@ -2,7 +2,7 @@
 title: "Ambitions"
 subtitle: "Hopefully future projects"
 date: 2024-06-16
-summary: "Why I'm interested in programming languages, open science, tiny machine learning, and theoretical computer science".
+summary: "Why I'm interested in programming languages, open science, tiny machine learning, and theoretical computer science"
 type: landing
 draft: false
 design:
