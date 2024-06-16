@@ -135,14 +135,14 @@ education:
       <span style="font-size: 5em;">{{< icon name="custom/thm_logo" >}}</span>
       </a>
 
-      Final Grade: 2.2 (78%)
+      Final Grade: 2.2 (78%) \
       210 CP (7 Semesters)
       
             
 
       Thesis: 
       "A Deep Reinforcement Learning Environment for the Limit Orderbook Intraday Electricity Market:
-      Development and efficient Implementation"
+      Development and efficient Implementation" \
       Grade: 1,2 (92%) 
 
       Elective modules:  

@@ -1,0 +1,36 @@
+# Hugo build output directories
+/public/
+/resources/
+
+# Hugo-specific files
+.hugo_build.lock
+
+# Node modules (if you use npm or yarn)
+/node_modules/
+/yarn.lock
+/package-lock.json
+
+# Dependency directories
+/vendor/
+/.DS_Store
+
+# IDE specific files
+.idea/
+/.vscode/
+*.swp
+*~
+
+# System files
+*.DS_Store
+Thumbs.db
+
+# Other possible build artifacts
+/dist/
+/build/
+/tmp/
+/log/
+/logs/
+
+# Hugo environment variables
+.env
+.env.*
