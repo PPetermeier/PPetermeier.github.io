@@ -1,7 +1,8 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ""
-date: 2022-10-24
+title: "Introduction"
+subtitle: "An overview of the contents of this page"
+date: 2024-06-16
 summary: Introductory overview to this website, my interests, education and skills
 type: landing
 draft: false

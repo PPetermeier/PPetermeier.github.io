@@ -1,6 +1,8 @@
 ---
 title: 'Skills'
-date: 2023-10-24
+subtitle: 'Where I worked and studied and what I learned'
+date: 2024-06-16
+summary: "A less formal CV on the web with more visualisation and"
 type: landing
 draft: false
 design:
