@@ -62,7 +62,7 @@ sections:
           - I'm most active on <a href="https://x.com/infornomics" target="_blank"> {{< icon name="brands/twitter" >}}Twitter </a>, where I aggregate posts according to my outlined interests and occasionally engage with others, hopefully to the benefit of ourselfs and others.
 
 
-          - <a href="https://www.linkedin.com/in/philipp-petermeier-6ba469229"> {{< icon name=\"brands/linkedin\" target="_blank">}}LinkedIn </a> is mainly a professional networking platform and of a communication channel than a public space for me.
+          - <a href="https://www.linkedin.com/in/philipp-petermeier-6ba469229" target="_blank"> {{< icon name=\"brands/linkedin\" >}}LinkedIn </a> is mainly a professional networking platform and of a communication channel than a public space for me.
 
 
           - On my <a href="https://infornomics.substack.com/" target="_blank"> {{< icon name=\"custom/substack\" >}}Substack </a> you will find longer discussions on various topics that have been on my mind and needed to be put down in writing.
@@ -71,7 +71,7 @@ sections:
           - You can <a href="mailto:p.petermeier@posteo.de"> {{< icon name=\"envelope\" >}}contact me directly </a> via my email adress.
 
 
-          - My <a href="uploads/CV_for_Website.pdf"> {{< icon name=\"academicons/cv\">}} </a> without private information can be downloaded from the last icon, if the <a href="/skills"> Education & Skills </a> leaves you wanting something more formal.
+          - My <a href="uploads/CV_for_Website.pdf" target="_blank"> {{< icon name=\"academicons/cv\">}} </a> without private information can be downloaded from the last icon, if the <a href="/skills"> Education & Skills </a> leaves you wanting something more formal.
     design:
       spacing:
     # Customize the section spacing. Order is top, right, bottom, left.
