@@ -27,7 +27,10 @@ sections:
         Maybe you or someone you know could fit that description? I'd love to hear from you. 
         
 
-        You can visit my [Education & Skills](/skills) section to get an idea what I could do for you and your team.
+
+
+
+        You can visit my <a href="/skills"> Education & Skills </a> section to get an idea what I could do for you and your team.
 
 
         Otherwise I hope you find what I aggregated here interesting, useful or at least entertaining.
@@ -53,22 +56,22 @@ sections:
           A brief guide what you can expect behind the icons and links at the top of this page. This overview will get updated as needed. 
 
 
-          -  The programming sideprojects that I consider worthy are publicly available  on my [{{< icon name=\"brands/github\" >}}**Github**](https://github.com/PPetermeier) page where this pages is also hosted.
+          -  The programming sideprojects that I consider worthy are publicly available  on my <a href="https://github.com/PPetermeier" target="_blank"> {{<icon name="brands/github">}} Github </a > page where this pages is also hosted.
 
 
-          - I'm most active on [{{< icon name=\"brands/twitter\" >}}**Twitter**](https://x.com/infornomics), where I aggregate posts according to my outlined interests and occasionally engage with others, hopefully to the benefit of ourselfs and others.
+          - I'm most active on <a href="https://x.com/infornomics" target="_blank"> {{< icon name="brands/twitter" >}}Twitter </a>, where I aggregate posts according to my outlined interests and occasionally engage with others, hopefully to the benefit of ourselfs and others.
 
 
-          - [{{< icon name=\"brands/linkedin\" >}}**LinkedIn**](https://www.linkedin.com/in/philipp-petermeier-6ba469229) is mainly a professional networking platform and of a communication channel than a public space for me.
+          - <a href="https://www.linkedin.com/in/philipp-petermeier-6ba469229"> {{< icon name=\"brands/linkedin\" target="_blank">}}LinkedIn </a> is mainly a professional networking platform and of a communication channel than a public space for me.
 
 
-          - On my [{{< icon name=\"custom/substack\" >}}**Substack**](https://infornomics.substack.com/) you will find longer discussions on various        topics that have been on my mind and needed to be put down in writing.
+          - On my <a href="https://infornomics.substack.com/" target="_blank"> {{< icon name=\"custom/substack\" >}}Substack </a> you will find longer discussions on various topics that have been on my mind and needed to be put down in writing.
 
 
-          - You can [{{< icon name=\"envelope\" >}}contact me directly](mailto:p.petermeier@posteo.de) via my email adress.
+          - You can <a href="mailto:p.petermeier@posteo.de"> {{< icon name=\"envelope\" >}}contact me directly </a> via my email adress.
 
 
-          - My [{{< icon name=\"academicons/cv\">}}](uploads/CV_for_Website.pdf) without private information can be downloaded from the last icon, if the [Education & Skills](skills) leaves you wanting something more formal.
+          - My <a href="uploads/CV_for_Website.pdf"> {{< icon name=\"academicons/cv\">}} </a> without private information can be downloaded from the last icon, if the <a href="/skills"> Education & Skills </a> leaves you wanting something more formal.
     design:
       spacing:
     # Customize the section spacing. Order is top, right, bottom, left.

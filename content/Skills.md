@@ -40,7 +40,7 @@ sections:
         At the same time, I'm sure that my experiences have structured many of my cognitive processes and views in a fundamental way, and have made me a much better software engineer, developer, modeller, team member and human being.    
 
 
-        If you are curious about this side of me, I would encourage you to visit the [About this place](https://infornomics.substack.com/p/about-me)-Section of my substack. How I think about things I find interesting can be seen in the posts themselves. I hope you like it.
+        If you are curious about this side of me, I would encourage you to visit the  <a href="https://infornomics.substack.com/p/about-me" target="_blank">About this place</a>-Section of my substack. How I think about things I find interesting can be seen in the posts themselves. I hope you like it.
 
         ___    
       design:
