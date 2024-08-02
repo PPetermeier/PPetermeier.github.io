@@ -102,12 +102,12 @@ sections:
         ### <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank">  Graph Theory</a >
         is a fundamental area of mathematics and theoretical computer science, studies structures called graphs, which consist of nodes (vertices) connected by edges. It provides a powerful framework for modelling relationships and interactions in complex systems. Fundamental concepts include paths, cycles, connectivity, and graph colouring. Key algorithms in graph theory include Dijkstra's algorithm for shortest paths, Kruskal's and Prim's algorithms for minimum spanning trees, and the Ford-Fulkerson algorithm for maximum flow problems. Graph theory is widely used to model real-world phenomena, such as social networks, where nodes represent individuals and edges represent relationships; transportation networks, where nodes are locations and edges are routes; and biological networks, where nodes can represent genes or proteins and edges represent interactions. These models help to optimise routes, understand social dynamics, and unravel biological processes.[^3]
 
-        Graphs are used in many different areas I'm interested in and can even be combined with Deep Learning Models into Graph Neural Networks. I would like to learn more about them.
+        Graphs are used in many different areas I'm interested in and can even be combined with Deep Learning Models into Graph Neural Networks. I would like to learn more about them. 
         ![Types of Graphs](graphs.png)<p style="text-align:right"> [^5]</p>
 
 
         ____
-        ### <a href="https://en.wikipedia.org/wiki/Information_theory" target="_blank">  Information Theory</a >, <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory" target="_blank">  Entropy</a >, <a href="https://en.wikipedia.org/wiki/Data_compression" target="_blank">  Compression</a >
+        ### <a href="https://en.wikipedia.org/wiki/Information_theory" target="_blank">  Information Theory</a >, <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank">  Entropy</a >, <a href="https://en.wikipedia.org/wiki/Data_compression" target="_blank">  Compression</a >
 
         **Entropy (H):**
 
