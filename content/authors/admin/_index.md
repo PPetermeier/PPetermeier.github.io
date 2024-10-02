@@ -143,7 +143,10 @@ education:
       Thesis: 
       "A Deep Reinforcement Learning Environment for the Limit Orderbook Intraday Electricity Market:
       Development and efficient Implementation" \
-      Grade: 1,2 (92%) 
+      Grade: 1,2 (92%)  \
+      
+      Winner the Karl-Heinz Lust Innovation Award 2024 in the area Digital Economy / Industry 4.0 / AI
+      Awarded by the foundation for applied Research, Innovation and Transfer Mittelhessen
 
       Elective modules:  
         - Introduction to Machine Learning 

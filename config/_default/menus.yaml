@@ -10,6 +10,9 @@ main:
   - name: Education & Skills
     url: /skills
     weight: 20
+  - name: Professional projects
+    url: /projects
+    weight: 30
   - name: Ambitions
     url: /ambitions
-    weight: 30
+    weight: 40

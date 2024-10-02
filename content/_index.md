@@ -22,10 +22,10 @@ sections:
         I'm collecting my various outputs here. 
 
 
-        Right now my main focus is finding a great team of wonderful, smart people to work with on something important. 
-        
-        
-        Maybe you or someone you know could fit that description? I'd love to hear from you. 
+        **Right now my main focus is finding a great team of wonderful, smart people to work with on something important.**
+
+
+        **Maybe you or someone you know could fit that description? I'd love to hear from you.**
         
 
 
