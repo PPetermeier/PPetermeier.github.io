@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Overview from '../components/Overview.astro';
+import SkillsPreview from '../components/SkillsPreview.astro';
+import Languages from '../components/Languages.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Philipp Petermeiers personal Website";
+const description = "Personal website of Philipp Petermeier, Research Associate at Fraunhofer IEE. Explore my work in Deep Reinforcement Learning, Energy Systems, and Data Science. Currently seeking opportunities to collaborate with innovative teams on important challenges.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Navigation />
+  <main>
+    <Hero />
+    <Overview />
+    <SkillsPreview />
+    <Languages />
+  </main>
+  <Footer />
+</BaseLayout>
