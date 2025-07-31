@@ -1,0 +1,20 @@
+{
+  "name": "mechanical-moon",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.43",
+    "astro": "^5.11.2",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^3.4.17"
+  }
+}
