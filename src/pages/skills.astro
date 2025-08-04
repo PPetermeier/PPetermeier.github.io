@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout 
+  title="Skills & Experience - Philipp Petermeier"
+  description="Comprehensive overview of my technical skills, education, and professional experience in Data Science, Machine Learning, and Business Information Systems."
+>
+  <main>
+    <!-- Skills Section -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <h1 class="text-5xl font-bold text-gray-900 mb-4">
+            ⌨️ Skills & Experience
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            A comprehensive overview of my technical expertise, educational background, and professional experience
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technical Skills</h2>
+          
+          {profile.skills.map((category) => (
+            <div class="mb-12">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-6">{category.name}</h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.items.map((skill) => (
+                  <div class="card p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                      <div class="text-primary-600 mr-4">
+                        <Icon name={skill.icon} size={32} />
+                      </div>
+                      <h4 class="font-semibold text-gray-900">{skill.name}</h4>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                      <div 
+                        class="bg-primary-600 h-3 rounded-full transition-all duration-300"
+                        style={`width: ${skill.percent}%`}
+                      />
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-600">
+                      <span>Proficiency</span>
+                      <span class="font-medium">{skill.percent}%</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Languages -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Languages</h2>
+          <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {profile.languages.map((language) => (
+              <div class="card p-6 text-center">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">{language.name}</h3>
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                  <div 
+                    class="bg-primary-600 h-3 rounded-full transition-all duration-300"
+                    style={`width: ${language.percent}%`}
+                  />
+                </div>
+                <span class="text-sm text-gray-600 font-medium">{language.percent}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Education</h2>
+        
+        <div class="max-w-4xl mx-auto">
+          {profile.education.map((edu) => (
+            <div class="card p-8 mb-8">
+              <div class="flex flex-col md:flex-row md:items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Icon name="mdi:school" size={32} class="text-primary-600" />
+                  </div>
+                </div>
+                
+                <div class="flex-grow">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div>
+                      <h3 class="text-xl font-bold text-gray-900 mb-2">{edu.area}</h3>
+                      <p class="text-lg text-primary-600 font-medium">{edu.institution}</p>
+                    </div>
+                    <div class="text-right mt-2 md:mt-0">
+                      <p class="text-gray-600 font-medium">
+                        {new Date(edu.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - 
+                        {new Date(edu.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="prose prose-gray max-w-none">
+                    <div class="whitespace-pre-line text-gray-700">{edu.summary}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Professional Experience</h2>
+        
+        <div class="max-w-4xl mx-auto">
+          {profile.work.map((job) => (
+            <div class="card p-8 mb-8">
+              <div class="flex flex-col md:flex-row md:items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Icon name="mdi:briefcase" size={32} class="text-primary-600" />
+                  </div>
+                </div>
+                
+                <div class="flex-grow">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div>
+                      <h3 class="text-xl font-bold text-gray-900 mb-2">{job.position}</h3>
+                      <p class="text-lg text-primary-600 font-medium">{job.company_name}</p>
+                    </div>
+                    <div class="text-right mt-2 md:mt-0">
+                      <p class="text-gray-600 font-medium">
+                        {new Date(job.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - 
+                        {new Date(job.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="prose prose-gray max-w-none">
+                    <div class="whitespace-pre-line text-gray-700">{job.summary}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-custom">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research Interests</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {profile.interests.map((interest) => (
+            <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-gray-800 font-medium">{interest}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
