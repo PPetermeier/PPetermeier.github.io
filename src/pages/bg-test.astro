@@ -1,0 +1,22 @@
+---
+import GeometricBackground from '../components/GeometricBackground.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometric Background Test</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #faf9f7; min-height: 100vh; position: relative;">
+  <GeometricBackground opacity={1} />
+
+  <!-- Optional: Grid overlay to see composition -->
+  <div style="position: fixed; inset: 0; pointer-events: none; z-index: 100;">
+    <!-- You can uncomment these to see the grid -->
+    <!-- <div style="position: absolute; left: 30%; top: 0; bottom: 0; width: 1px; background: rgba(255,0,0,0.3);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 12.5%; height: 1px; background: rgba(255,0,0,0.3);"></div> -->
+  </div>
+</body>
+</html>
