@@ -4,17 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        text:'#1a1a1a',
+        background: '#faf9f7',
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#f6f8f6',
+          100: '#e8ede8',
+          200: '#d1dbd1',
+          300: '#aec2ae',
+          400: '#87a487',
+          500: '#6b8e6b',
+          600: '#5a7a5a',
+          700: '#4a5f4a',
+          800: '#3d4e3d',
+          900: '#344234',
         },
         secondary: {
           50: '#f8fafc',
@@ -31,12 +33,17 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
+        'fade-in': 'fadeIn 0.7s ease-out',
+        'slide-up': 'slideUp 0.7s ease-out',
+        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'draw-line': 'drawLine 1s ease-out forwards',
+        'gradient-shift': 'gradientShift 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -46,6 +53,46 @@ export default {
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        glowPulse: {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(107, 142, 107, 0.3)',
+          },
+          '50%': {
+            boxShadow: '0 0 40px rgba(107, 142, 107, 0.6)',
+          },
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-10px)',
+          },
+        },
+        shimmer: {
+          '0%': {
+            backgroundPosition: '-200% center',
+          },
+          '100%': {
+            backgroundPosition: '200% center',
+          },
+        },
+        drawLine: {
+          '0%': {
+            strokeDashoffset: '1000',
+          },
+          '100%': {
+            strokeDashoffset: '0',
+          },
+        },
+        gradientShift: {
+          '0%, 100%': {
+            backgroundPosition: '0% 50%',
+          },
+          '50%': {
+            backgroundPosition: '100% 50%',
+          },
         },
       },
     },
