@@ -1,173 +1,281 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Animate from '../components/Animate.astro';
 import { Icon } from 'astro-icon/components';
 import { profile } from '../data/profile';
+
+const title = "Skills & Experience - Philipp Petermeier";
+const description = "Comprehensive overview of my technical skills, education, and professional experience in Data Science, Machine Learning, and Energy Systems.";
 ---
 
-<BaseLayout 
-  title="Skills & Experience - Philipp Petermeier"
-  description="Comprehensive overview of my technical skills, education, and professional experience in Data Science, Machine Learning, and Business Information Systems."
->
-  <main>
-    <!-- Skills Section -->
-    <section class="section-padding bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-12">
-          <h1 class="text-5xl font-bold text-gray-900 mb-4">
-            ⌨️ Skills & Experience
-          </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise, educational background, and professional experience
-          </p>
-        </div>
+<BaseLayout title={title} description={description}>
+  <Navigation />
 
-        <!-- Technical Skills -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technical Skills</h2>
-          
-          {profile.skills.map((category) => (
-            <div class="mb-12">
-              <h3 class="text-2xl font-semibold text-gray-800 mb-6">{category.name}</h3>
-              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.items.map((skill) => (
-                  <div class="card p-6 hover:shadow-lg transition-shadow">
-                    <div class="flex items-center mb-4">
-                      <div class="text-primary-600 mr-4">
-                        <Icon name={skill.icon} size={32} />
-                      </div>
-                      <h4 class="font-semibold text-gray-900">{skill.name}</h4>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                      <div 
-                        class="bg-primary-600 h-3 rounded-full transition-all duration-300"
-                        style={`width: ${skill.percent}%`}
-                      />
-                    </div>
-                    <div class="flex justify-between text-sm text-gray-600">
-                      <span>Proficiency</span>
-                      <span class="font-medium">{skill.percent}%</span>
+  <!-- Page Header -->
+  <header class="bg-gradient-to-br from-primary-50 via-white to-primary-50 border-b border-primary-100">
+    <div class="container-custom py-12 md:py-16">
+      <Animate type="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Skills & Experience
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl">
+          Technical expertise, educational background, and professional experience in reinforcement learning and energy systems
+        </p>
+      </Animate>
+    </div>
+  </header>
+
+  <!-- Main Content with Sidebar -->
+  <main class="bg-background min-h-screen">
+    <div class="container-custom py-8 md:py-12">
+      <div class="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-12">
+
+        <!-- Sidebar Navigation -->
+        <aside class="lg:sticky lg:top-24 h-fit">
+          <Animate type="fade-in">
+            <nav class="bg-white rounded-lg shadow-sm p-6 space-y-2">
+              <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+                Jump to
+              </h2>
+              <a href="#technical-skills" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Technical Skills
+              </a>
+              <a href="#languages" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Languages
+              </a>
+              <a href="#education" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Education
+              </a>
+              <a href="#experience" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Experience
+              </a>
+              <a href="#interests" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Research Interests
+              </a>
+            </nav>
+          </Animate>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="space-y-8">
+
+          <!-- Technical Skills Section -->
+          <section id="technical-skills" class="scroll-mt-24">
+            <Animate type="fade-up">
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Skills</h2>
+
+                {profile.skills.map((category) => (
+                  <div class="mb-12 last:mb-0">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6 border-b border-gray-200 pb-3">
+                      {category.name}
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                      {category.items.map((skill, i) => (
+                        <Animate type="scale-in" delay={i * 50}>
+                          <div class="p-4 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
+                            <div class="flex items-center mb-3">
+                              <div class="text-primary-600 mr-3">
+                                <Icon name={skill.icon} size={28} />
+                              </div>
+                              <h4 class="font-semibold text-gray-900">{skill.name}</h4>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                              <div
+                                class="bg-primary-600 h-2 rounded-full transition-all duration-300"
+                                style={`width: ${skill.percent}%`}
+                              />
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                              <span>Proficiency</span>
+                              <span class="font-medium">{skill.percent}%</span>
+                            </div>
+                          </div>
+                        </Animate>
+                      ))}
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
+            </Animate>
+          </section>
 
-        <!-- Languages -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Languages</h2>
-          <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {profile.languages.map((language) => (
-              <div class="card p-6 text-center">
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">{language.name}</h3>
-                <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                  <div 
-                    class="bg-primary-600 h-3 rounded-full transition-all duration-300"
-                    style={`width: ${language.percent}%`}
-                  />
-                </div>
-                <span class="text-sm text-gray-600 font-medium">{language.percent}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section-padding bg-gray-50">
-      <div class="container-custom">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Education</h2>
-        
-        <div class="max-w-4xl mx-auto">
-          {profile.education.map((edu) => (
-            <div class="card p-8 mb-8">
-              <div class="flex flex-col md:flex-row md:items-start gap-6">
-                <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <Icon name="mdi:school" size={32} class="text-primary-600" />
-                  </div>
-                </div>
-                
-                <div class="flex-grow">
-                  <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold text-gray-900 mb-2">{edu.area}</h3>
-                      <p class="text-lg text-primary-600 font-medium">{edu.institution}</p>
-                    </div>
-                    <div class="text-right mt-2 md:mt-0">
-                      <p class="text-gray-600 font-medium">
-                        {new Date(edu.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - 
-                        {new Date(edu.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="prose prose-gray max-w-none">
-                    <div class="whitespace-pre-line text-gray-700">{edu.summary}</div>
-                  </div>
+          <!-- Languages Section -->
+          <section id="languages" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Languages</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                  {profile.languages.map((language, i) => (
+                    <Animate type="slide-left" delay={i * 100}>
+                      <div class="p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">{language.name}</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                          <div
+                            class="bg-primary-600 h-3 rounded-full transition-all duration-300"
+                            style={`width: ${language.percent}%`}
+                          />
+                        </div>
+                        <span class="text-sm text-gray-600 font-medium">{language.percent}% proficiency</span>
+                      </div>
+                    </Animate>
+                  ))}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            </Animate>
+          </section>
 
-    <!-- Work Experience Section -->
-    <section class="section-padding bg-white">
-      <div class="container-custom">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Professional Experience</h2>
-        
-        <div class="max-w-4xl mx-auto">
-          {profile.work.map((job) => (
-            <div class="card p-8 mb-8">
-              <div class="flex flex-col md:flex-row md:items-start gap-6">
-                <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <Icon name="mdi:briefcase" size={32} class="text-primary-600" />
-                  </div>
-                </div>
-                
-                <div class="flex-grow">
-                  <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold text-gray-900 mb-2">{job.position}</h3>
-                      <p class="text-lg text-primary-600 font-medium">{job.company_name}</p>
+          <!-- Education Section -->
+          <section id="education" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Education</h2>
+
+                {profile.education.map((edu, i) => (
+                  <Animate type="slide-right" delay={i * 100}>
+                    <div class="mb-8 last:mb-0 p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
+                      <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <Icon name="mdi:school" size={32} class="text-primary-600" />
+                          </div>
+                        </div>
+
+                        <div class="flex-grow">
+                          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                              <h3 class="text-xl font-bold text-gray-900 mb-2">{edu.area}</h3>
+                              <p class="text-lg text-primary-600 font-medium">{edu.institution}</p>
+                            </div>
+                            <div class="text-left md:text-right mt-2 md:mt-0">
+                              <p class="text-gray-600 font-medium text-sm">
+                                {new Date(edu.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} -
+                                {new Date(edu.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="prose prose-gray max-w-none">
+                            <div class="whitespace-pre-line text-gray-700 leading-relaxed">{edu.summary}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="text-right mt-2 md:mt-0">
-                      <p class="text-gray-600 font-medium">
-                        {new Date(job.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - 
-                        {new Date(job.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
-                      </p>
+                  </Animate>
+                ))}
+              </div>
+            </Animate>
+          </section>
+
+          <!-- Work Experience Section -->
+          <section id="experience" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Professional Experience</h2>
+
+                {profile.work.map((job, i) => (
+                  <Animate type="slide-right" delay={i * 100}>
+                    <div class="mb-8 last:mb-0 p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
+                      <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                          <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <Icon name="mdi:briefcase" size={32} class="text-primary-600" />
+                          </div>
+                        </div>
+
+                        <div class="flex-grow">
+                          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                              <h3 class="text-xl font-bold text-gray-900 mb-2">{job.position}</h3>
+                              <p class="text-lg text-primary-600 font-medium">{job.company_name}</p>
+                            </div>
+                            <div class="text-left md:text-right mt-2 md:mt-0">
+                              <p class="text-gray-600 font-medium text-sm">
+                                {new Date(job.date_start).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} -
+                                {new Date(job.date_end).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="prose prose-gray max-w-none">
+                            <div class="whitespace-pre-line text-gray-700 leading-relaxed">{job.summary}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div class="prose prose-gray max-w-none">
-                    <div class="whitespace-pre-line text-gray-700">{job.summary}</div>
-                  </div>
+                  </Animate>
+                ))}
+              </div>
+            </Animate>
+          </section>
+
+          <!-- Research Interests Section -->
+          <section id="interests" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Interests</h2>
+
+                <div class="flex flex-wrap gap-3">
+                  {profile.interests.map((interest, i) => (
+                    <Animate type="scale-in" delay={i * 30}>
+                      <div class="px-4 py-2 bg-primary-50 text-primary-700 rounded-full border border-primary-200 hover:bg-primary-100 hover:border-primary-300 transition-colors font-medium">
+                        {interest}
+                      </div>
+                    </Animate>
+                  ))}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            </Animate>
+          </section>
 
-    <!-- Interests Section -->
-    <section class="section-padding bg-gray-50">
-      <div class="container-custom">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research Interests</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {profile.interests.map((interest) => (
-            <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-              <span class="text-gray-800 font-medium">{interest}</span>
-            </div>
-          ))}
         </div>
       </div>
-    </section>
+    </div>
   </main>
+
+  <Footer />
 </BaseLayout>
+
+<style>
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth scroll offset for fixed header */
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+</style>
+
+<script>
+  // Active section highlighting in sidebar
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('aside nav a');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              link.classList.remove('bg-primary-100', 'text-primary-700', 'font-semibold');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('bg-primary-100', 'text-primary-700', 'font-semibold');
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-100px 0px -60% 0px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>
