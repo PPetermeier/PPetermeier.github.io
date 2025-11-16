@@ -61,8 +61,8 @@ export const profile: Profile = {
   name: "Philipp Petermeier",
   firstName: "Philipp",
   lastName: "Petermeier",
-  role: "Seeker",
-  status: "🔍",
+  role: "Research Associate",
+  status: "Seeking New Opportunities",
   avatar: "/media/icon.png",
   bio: `I have a **B.S. in Business Information Systems** with a focus on *Data Science* and *Data Engineering* specialising in *Reinforcement Learning*. 
 I'm interested in data and models related to energy systems and the green transition, bioinformatics and materials science. 
@@ -248,11 +248,11 @@ Elective modules:
   ],
   languages: [
     {
-      name: "🇩🇪 German",
+      name: "German",
       percent: 100
     },
     {
-      name: "🇬🇧 English",
+      name: "English",
       percent: 90
     }
   ]
