@@ -5,14 +5,14 @@ import { profile } from '../data/profile';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 text-white">
+<footer class="bg-gray-100 text-gray-900 border-t border-gray-200">
   <div class="container-custom">
     <div class="py-12">
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Brand -->
         <div>
-          <h3 class="text-2xl font-bold text-primary-400 mb-4">Infornomics</h3>
-          <p class="text-gray-300 leading-relaxed">
+          <h3 class="text-2xl font-bold text-primary-600 mb-4">Infornomics</h3>
+          <p class="text-gray-600 leading-relaxed">
             Personal website of Philipp Petermeier. Research Associate exploring Deep Reinforcement Learning, Energy Systems, and Data Science.
           </p>
         </div>
@@ -22,16 +22,16 @@ const currentYear = new Date().getFullYear();
           <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2">
             <li>
-              <a href="/" class="text-gray-300 hover:text-primary-400 transition-colors">Home</a>
+              <a href="/" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
             </li>
             <li>
-              <a href="/skills" class="text-gray-300 hover:text-primary-400 transition-colors">Skills</a>
+              <a href="/skills" class="text-gray-600 hover:text-primary-600 transition-colors">Skills</a>
             </li>
             <li>
-              <a href="/projects" class="text-gray-300 hover:text-primary-400 transition-colors">Projects</a>
+              <a href="/projects" class="text-gray-600 hover:text-primary-600 transition-colors">Projects</a>
             </li>
             <li>
-              <a href="/uploads/CV_for_Website.pdf" target="_blank" class="text-gray-300 hover:text-primary-400 transition-colors">CV</a>
+              <a href="/uploads/CV_for_Website.pdf" target="_blank" class="text-gray-600 hover:text-primary-600 transition-colors">CV</a>
             </li>
           </ul>
         </div>
@@ -45,7 +45,7 @@ const currentYear = new Date().getFullYear();
                 href={social.url}
                 target={social.url.startsWith('http') ? '_blank' : undefined}
                 rel={social.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                class="text-gray-300 hover:text-primary-400 transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
                 aria-label={social.label}
               >
                 <Icon name={social.icon} size={24} />
@@ -57,13 +57,13 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-800 py-6">
+    <div class="border-t border-gray-300 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm">
+        <p class="text-gray-500 text-sm">
           © {currentYear} Philipp Petermeier. This work is licensed under Creative Commons.
         </p>
-        <p class="text-gray-400 text-sm mt-2 md:mt-0">
-          Built with <span class="text-primary-400">Astro</span> and <span class="text-primary-400">Tailwind CSS</span>
+        <p class="text-gray-500 text-sm mt-2 md:mt-0">
+          Built with <span class="text-primary-600">Astro</span> and <span class="text-primary-600">Tailwind CSS</span>
         </p>
       </div>
     </div>
