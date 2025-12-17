@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Animate from '../components/Animate.astro';
+import { Icon } from 'astro-icon/components';
+import { profile } from '../data/profile';
+
+const title = "Projects - Philipp Petermeier";
+const description = "Explore my key projects, implementations and writings.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Navigation />
+
+  <!-- Page Header -->
+  <header class="bg-gradient-to-br from-primary-50 via-white to-primary-50 border-b border-primary-100">
+    <div class="container-custom py-12 md:py-16">
+      <Animate type="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Projects
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl">
+          Research projects, technical implementations and publications
+        </p>
+      </Animate>
+    </div>
+  </header>
+
+  <!-- Main Content with Sidebar -->
+  <main class="min-h-screen">
+    <div class="container-custom py-8 md:py-12">
+      <div class="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-12">
+
+        <!-- Sidebar Navigation -->
+        <aside class="lg:sticky lg:top-24 h-fit">
+          <Animate type="fade-in">
+            <nav class="bg-white rounded-lg shadow-sm p-6 space-y-2">
+              <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+                Jump to
+              </h2>
+              <a href="#research" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Research Projects
+              </a>
+              <a href="#technical" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Technical Projects
+              </a>
+              <a href="#writings" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Writings
+              </a>
+            </nav>
+          </Animate>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="space-y-8">
+
+          <!-- Research Projects Section -->
+          <section id="research" class="scroll-mt-24">
+            <Animate type="fade-up">
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Projects</h2>
+
+                <!-- Bachelor Thesis -->
+                <div class="mb-12 last:mb-0">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:trending-up" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          Deep Reinforcement Learning for Electricity Trading
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Bachelor Thesis • Grade: 1.2 (92%)</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                          Developed a comprehensive reinforcement learning environment for the limit orderbook intraday electricity market.
+                          This work involved creating a scientific Python package with optimized runtime performance and MongoDB integration.
+                        </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Reinforcement Learning</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Energy Systems</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">MongoDB</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">HPC</span>
+                      </div>
+
+                      <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                        <div class="flex items-center">
+                          <Icon name="mdi:trophy" size={24} class="text-green-600 mr-3" />
+                          <span class="text-green-800 font-medium">
+                            Winner of Karl-Heinz Lust Innovation Award 2024 (Digital Economy / Industry 4.0 / AI)
+                          </span>
+                        </div>
+                      </div>
+
+                      <a
+                        href="/uploads/Expose_BSC_for_Website.pdf"
+                        class="btn btn-outline inline-flex items-center gap-2"
+                        download
+                        target="_blank"
+                      >
+                        <Icon name="mdi:file-download" size={20} />
+                        Download Thesis Exposé
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </Animate>
+          </section>
+
+          <!-- Technical Projects Section -->
+          <section id="technical" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Projects</h2>
+
+
+                <!-- Website Project -->
+                <div class="mb-12 last:mb-0">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:web" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          Personal Portfolio Website
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Personal Project • 2025</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                          Designed and developed a modern portfolio website using Astro, migrated from Hugo. Features a unified visual design system,
+                          component-based architecture, and responsive design with scroll-triggered animations.
+                          <br /> You are currently viewing the latest version!<br />
+                          <a href="https://github.com/PPetermeier/PPetermeier.github.io" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
+                            <Icon name="mdi:github" size={16} class="inline" />
+                            Repository
+                          </a>
+                        </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Astro</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Responsive Design</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- HumanAIColaboration Project -->
+                <div class="mb-12 last:mb-0 border-t border-gray-200 pt-12">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:brain" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          LMM Human-AI Collaboration Scaffold, <br /> markdown-based
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Personal Project • 2025</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                          Open source scaffold for human-AI collaboration (specifically LLMs).
+                          <br />
+                          Part project management and documentation template for collaborative knowledge work, part user guide for best practices in human-AI interaction as well as self directed experimentation and learning
+                           <br />
+                        <a href="https://github.com/PPetermeier/HumanAIColaborationFramework" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
+                          <Icon name="mdi:github" size={16} class="inline" />
+                          Repository
+                        </a>
+                            </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Astro</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Responsive Design</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ShinyUkraine Project -->
+                <div class="mb-12 last:mb-0 border-t border-gray-200 pt-12">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                    
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:view-dashboard-outline" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          Ukraine Support Tracker Shiny Implementation
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Personal Project • 2024</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                        Leveraged Shiny for Python to create an interactive web application that tracks and visualizes the data from the <a href="https://www.kielinstitut.de/topics/war-against-ukraine/ukraine-support-tracker/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Ukraine Support Tracker</a> of the Kiel Institute for the World Economy (IfW)
+                        <br />
+                        Including no-code ETL (Excel to duckdb) pipeline, interactive visualizations, and deployment on shinyapps.io.
+                        <br />
+                        <a href="https://github.com/PPetermeier/ShinyUkraine" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
+                          <Icon name="mdi:github" size={16} class="inline" />
+                          Repository
+                        </a>
+                        ,
+                        <a href="https://infornomics.shinyapps.io/shinyukraine/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Hosting</a>
+                             </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">duckdb</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">PyShiny</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Dashboards</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">ETL</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Scientific Python Package -->
+                <div class="mb-12 last:mb-0 border-t border-gray-200 pt-12">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:factory" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          Scientific Python Package Development
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Fraunhofer IEE • 2022-2024</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                          Contributed to  the development of a scientific Python package for deep reinforcement learning in electricity trading,
+                          including formal modeling, algorithm and ETL pipeline design, MongoDB deployment, and HPC cluster orchestration using Ray. 
+                        </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Python Package Development</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">ETL Pipelines</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Performance Optimization</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Ray Framework</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Formal Modeling</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              
+            </Animate>
+          </section>
+
+          <!-- Writings Section -->
+          <section id="writings" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+              <!-- Time & Generations Section -->
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:book-open-page-variant-outline" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+
+                    <div class="flex-grow">
+                      <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                          Review of "Time and the Generations" by Partha Dasgupta
+                        </h3>
+                        <p class="text-lg text-primary-600 font-medium mb-4">Private project on Substack • 2024, still running</p>
+                      </div>
+
+                      <div class="prose prose-gray max-w-none mb-6">
+                        <p class="text-gray-700">
+                          Conducting an in-depth review and analysis of Partha Dasgupta's lecture "Time & Generation",
+                          focusing on its implications for sustainable development and intergenerational equity.
+                          <br />
+                          I think the review provides a good window into my own thinking through sharing how I approached the book over time.
+                          <br />
+                          <a href="https://infornomics.substack.com/p/reading-partha-dasgupta-time-and" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
+                            <Icon name="simple-icons:substack" size={16} class="inline" />
+                            Read on Substack
+                          </a>
+                            </p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Sustainability</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Economics</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Mathematical modeling</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Political Philosophy</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Ethics</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </d
+              </div>
+            </Animate>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth scroll offset for fixed header */
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+</style>
+
+<script>
+  // Active section highlighting in sidebar
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('aside nav a');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              link.classList.remove('bg-primary-100', 'text-primary-700', 'font-semibold');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('bg-primary-100', 'text-primary-700', 'font-semibold');
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '-120px 0px -40% 0px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>

@@ -1,36 +1,27 @@
-# Hugo build output directories
-/public/
-/resources/
+# Build output
+dist/
 
-# Hugo-specific files
-.hugo_build.lock
+# Dependencies
+node_modules/
 
-# Node modules (if you use npm or yarn)
-/node_modules/
-/yarn.lock
-/package-lock.json
+# Astro cache
+.astro/
 
-# Dependency directories
-/vendor/
-/.DS_Store
+# Environment
+.env
+.env.*
 
-# IDE specific files
+# IDE
 .idea/
-/.vscode/
+.vscode/
 *.swp
 *~
 
-# System files
-*.DS_Store
+# System
+.DS_Store
 Thumbs.db
 
-# Other possible build artifacts
-/dist/
-/build/
-/tmp/
-/log/
-/logs/
-
-# Hugo environment variables
-.env
-.env.*
+# Project notes (not for public repo)
+notes/
+.claude/
+CLAUDE.md

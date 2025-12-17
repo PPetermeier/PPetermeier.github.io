@@ -1,0 +1,124 @@
+---
+/**
+ * Reusable animation wrapper component
+ *
+ * Usage:
+ * <Animate type="fade-up" delay={200}>
+ *   <div>Content to animate</div>
+ * </Animate>
+ */
+
+interface Props {
+  type?: 'fade-up' | 'fade-in' | 'slide-left' | 'slide-right' | 'scale-in' | 'bounce-in' | 'rotate-in';
+  delay?: number;
+  duration?: number;
+  class?: string;
+}
+
+const {
+  type = 'fade-up',
+  delay = 0,
+  duration = 700,
+  class: className = ''
+} = Astro.props;
+
+// Define initial and final states for each animation type
+const animations = {
+  'fade-up': {
+    initial: 'opacity-0 translate-y-4',
+    final: 'opacity-100 translate-y-0'
+  },
+  'fade-in': {
+    initial: 'opacity-0',
+    final: 'opacity-100'
+  },
+  'slide-left': {
+    initial: 'opacity-0 translate-x-8',
+    final: 'opacity-100 translate-x-0'
+  },
+  'slide-right': {
+    initial: 'opacity-0 -translate-x-8',
+    final: 'opacity-100 translate-x-0'
+  },
+  'scale-in': {
+    initial: 'opacity-0 scale-95',
+    final: 'opacity-100 scale-100'
+  },
+  'bounce-in': {
+    initial: 'opacity-0 scale-50',
+    final: 'opacity-100 scale-100'
+  },
+  'rotate-in': {
+    initial: 'opacity-0 rotate-12 scale-95',
+    final: 'opacity-100 rotate-0 scale-100'
+  }
+};
+
+const { initial, final } = animations[type];
+const transitionClass = `transition-all ease-out`;
+const durationStyle = `${duration}ms`;
+const delayStyle = delay > 0 ? `${delay}ms` : '0ms';
+---
+
+<div
+  class={`${initial} ${transitionClass} ${className}`}
+  data-animate={type}
+  data-final={final}
+  style={`transition-duration: ${durationStyle}; transition-delay: ${delayStyle};`}
+>
+  <slot />
+</div>
+
+<script>
+  // This script runs once and sets up the observer for all Animate components
+  if (typeof window !== 'undefined') {
+    // Only run on client side
+    const setupAnimations = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const finalClasses = entry.target.getAttribute('data-final');
+              const animType = entry.target.getAttribute('data-animate');
+
+              if (finalClasses) {
+                const finalClassArray = finalClasses.split(' ');
+                const animations = {
+                  'fade-up': ['opacity-0', 'translate-y-4'],
+                  'fade-in': ['opacity-0'],
+                  'slide-left': ['opacity-0', 'translate-x-8'],
+                  'slide-right': ['opacity-0', '-translate-x-8'],
+                  'scale-in': ['opacity-0', 'scale-95'],
+                  'bounce-in': ['opacity-0', 'scale-50'],
+                  'rotate-in': ['opacity-0', 'rotate-12', 'scale-95']
+                };
+
+                const initialClasses = animations[animType as keyof typeof animations] || [];
+
+                entry.target.classList.remove(...initialClasses);
+                entry.target.classList.add(...finalClassArray);
+              }
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      document.querySelectorAll('[data-animate]').forEach((el) => {
+        observer.observe(el);
+      });
+    };
+
+    // Run on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupAnimations);
+    } else {
+      setupAnimations();
+    }
+  }
+</script>

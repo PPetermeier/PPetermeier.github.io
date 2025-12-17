@@ -1,0 +1,95 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/fraunces/600.css';
+import '@fontsource/fraunces/700.css';
+import '../styles/global.css';
+import { profile } from '../data/profile';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = profile.bio, image = "/media/og-image.png" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:site_name" content="Philipp Petermeier" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@infornomics" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Philipp Petermeier",
+        "url": "https://www.infornomics.de",
+        "image": "https://www.infornomics.de/media/icon.png",
+        "sameAs": [
+          "https://github.com/PPetermeier",
+          "https://x.com/infornomics",
+          "https://www.linkedin.com/in/philipp-petermeier-6ba469229",
+          "https://infornomics.substack.com/"
+        ],
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Backwelltech"
+        },
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "Technische Hochschule Mittelhessen"
+        },
+        "knowsAbout": [
+          "Software Engineering",
+          "Full Stack Development",
+          "Machine Learning",
+          "Data Science",
+          "Python"
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="relative bg-background min-h-screen">
+    <!-- Unified geometric background for entire page -->
+    <div class="geometric-background">
+      <img src="/geometric-bg-complete.svg" alt="" />
+    </div>
+
+    <!-- Page content -->
+    <div class="relative z-10">
+      <slot />
+    </div>
+  </body>
+</html>

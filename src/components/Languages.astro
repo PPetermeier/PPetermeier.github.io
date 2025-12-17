@@ -1,0 +1,37 @@
+---
+import { profile } from '../data/profile';
+---
+
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8 md:p-12">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Languages
+        </h2>
+        <p class="text-xl text-gray-600">
+          How I can interact with you
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="grid gap-6">
+          {profile.languages.map((language) => (
+            <div class="p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">{language.name}</h3>
+              <span class="text-lg text-gray-600">{language.percent}%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3">
+              <div
+                class="bg-primary-600 h-3 rounded-full transition-all duration-300"
+                style={`width: ${language.percent}%`}
+              />
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

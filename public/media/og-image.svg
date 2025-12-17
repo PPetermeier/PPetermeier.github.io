@@ -1,0 +1,40 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - warm off-white canvas -->
+  <rect width="1200" height="630" fill="#faf9f7"/>
+
+  <!-- Decorative sage green accent bar at top -->
+  <rect width="1200" height="8" fill="#6b8e6b"/>
+
+  <!-- White card in center -->
+  <rect x="80" y="80" width="1040" height="470" rx="16" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Sage green accent circle (decorative) -->
+  <circle cx="1000" cy="180" r="120" fill="#e8ede8" opacity="0.5"/>
+  <circle cx="150" cy="500" r="80" fill="#e8ede8" opacity="0.3"/>
+
+  <!-- Name - using system serif as fallback for Fraunces -->
+  <text x="140" y="260" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#6b8e6b">
+    Philipp Petermeier
+  </text>
+
+  <!-- Role -->
+  <text x="140" y="330" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#1a1a1a">
+    Software Engineer &amp; Full Stack Developer
+  </text>
+
+  <!-- Divider line -->
+  <rect x="140" y="370" width="120" height="4" rx="2" fill="#6b8e6b"/>
+
+  <!-- Bio/tagline -->
+  <text x="140" y="430" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#64748b">
+    Building software and working with data
+  </text>
+  <text x="140" y="465" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#64748b">
+    Machine Learning · Complex Systems · Full Stack
+  </text>
+
+  <!-- Website URL -->
+  <text x="140" y="520" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500" fill="#6b8e6b">
+    infornomics.de
+  </text>
+</svg>
