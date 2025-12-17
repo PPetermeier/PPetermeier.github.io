@@ -1,0 +1,39 @@
+<svg width="100%" height="100%" viewBox="0 0 1920 1280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Grain Filter to mimic the textured paper look -->
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0"/>
+      <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+      <feBlend in="SourceGraphic" in2="monoNoise" mode="overlay" result="noiseOutput"/>
+    </filter>
+    
+    <!-- Gradients for depth -->
+    <linearGradient id="mainCircleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e78c03ff" />
+      <stop offset="100%" stop-color="#967D60" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="100%" height="100%" fill="#E8E6E1" />
+
+  <!-- Large Diagonal Shape (Bottom Left) -->
+  <path d="M0 1280 L0 400 L900 1280 Z" fill="#e78c03ff" opacity="0.12" />
+  
+  <!-- Secondary Diagonal (Faint Overlay) -->
+  <path d="M0 1280 L600 1280 L0 600 Z" fill="#e78c03ff" opacity="0.12" />
+
+  <!-- The Main Central Circle -->
+  <circle cx="1050" cy="550" r="350" fill="url(#mainCircleGrad)" opacity="0.27" />
+
+  <!-- The Right Swooping Overlay (Large arc) -->
+  <!-- This creates the intersection effect on the right side of the circle -->
+  <circle cx="1500" cy="200" r="650" fill="#a57308ff" opacity="0.20" style="mix-blend-mode: multiply;" />
+
+  <!-- Diagonal Line from Bottom Left to Top Right (Autumnal Gold) -->
+  <line x1="50" y1="1230" x2="1870" y2="50" stroke="#D4A574" stroke-width="10" opacity="0.30" />
+
+  <!-- Apply Noise Filter over the whole image -->
+  <rect width="100%" height="100%" fill="transparent" filter="url(#noiseFilter)" opacity="0.18" style="pointer-events: none;" />
+</svg>

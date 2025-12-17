@@ -17,10 +17,16 @@ const { opacity = 0.3 } = Astro.props;
   >
     <!-- Define rich earth-tone colors -->
     <defs>
-      <!-- Triangle gradient - rich terracotta to warm tan -->
-      <linearGradient id="triangleGradient" x1="0%" y1="100%" x2="50%" y2="0%">
+      <!-- Triangle gradient - fades out along hypotenuse (from bottom corner to top point) -->
+      <linearGradient id="triangleGradient" x1="0%" y1="100%" x2="0%" y2="12.5%">
         <stop offset="0%" style="stop-color:#c49a6c;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#b8956f;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#b8956f;stop-opacity:0" />
+      </linearGradient>
+
+      <!-- Gradient for field - fades from 15% opacity to 0 -->
+      <linearGradient id="fieldGradient" x1="14.5%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#c49a6c;stop-opacity:0.15" />
+        <stop offset="100%" style="stop-color:#c49a6c;stop-opacity:0" />
       </linearGradient>
 
       <!-- Circle 1 gradient - warm beige fading outward -->
@@ -46,7 +52,15 @@ const { opacity = 0.3 } = Astro.props;
     <path
       d="M 0,1080 L 0,135 L 576,1080 Z"
       fill="url(#triangleGradient)"
-      opacity="0.95"
+    />
+
+    <!-- Field below hypotenuse: starts at midpoint between left corner and triangle edge
+         Midpoint: (0 + 576) / 2 = 288 on bottom border at (288, 1080)
+         Extends to right and top edges with fading opacity
+    -->
+    <path
+      d="M 288,1080 L 576,1080 L 1920,1080 L 1920,0 L 0,135 Z"
+      fill="url(#fieldGradient)"
     />
 
     <!-- Circle 1: Larger circle in upper-right quadrant

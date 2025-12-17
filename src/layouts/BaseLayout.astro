@@ -6,7 +6,7 @@ import '@fontsource/inter/700.css';
 import '@fontsource/fraunces/600.css';
 import '@fontsource/fraunces/700.css';
 import '../styles/global.css';
-import GeometricBackground from '../components/GeometricBackground.astro';
+import { profile } from '../data/profile';
 
 export interface Props {
   title: string;
@@ -14,7 +14,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description = "Personal website of Philipp Petermeier, Research Associate at Fraunhofer IEE. Explore my work in Deep Reinforcement Learning, Energy Systems, and Data Science.", image = "/media/sharing.JPG" } = Astro.props;
+const { title, description = profile.bio, image = "/media/og-image.png" } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -61,20 +61,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           "https://www.linkedin.com/in/philipp-petermeier-6ba469229",
           "https://infornomics.substack.com/"
         ],
-        "jobTitle": "Research Associate",
+        "jobTitle": "Software Engineer",
         "worksFor": {
           "@type": "Organization",
-          "name": "Fraunhofer IEE"
+          "name": "Backwelltech"
         },
         "alumniOf": {
           "@type": "Organization",
           "name": "Technische Hochschule Mittelhessen"
         },
         "knowsAbout": [
-          "Deep Reinforcement Learning",
-          "Energy Systems",
-          "Data Science",
+          "Software Engineering",
+          "Full Stack Development",
           "Machine Learning",
+          "Data Science",
           "Python"
         ]
       }
@@ -83,7 +83,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <body class="relative bg-background min-h-screen">
     <!-- Unified geometric background for entire page -->
-    <GeometricBackground opacity={0.3} />
+    <div class="geometric-background">
+      <img src="/geometric-bg-complete.svg" alt="" />
+    </div>
 
     <!-- Page content -->
     <div class="relative z-10">

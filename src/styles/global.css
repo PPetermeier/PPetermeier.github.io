@@ -60,6 +60,10 @@
     @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
   }
 
+  .btn-primary-inverse {
+    @apply bg-primary-600 text-white border-2 border-primary-600 hover:bg-white hover:text-primary-600 focus:ring-primary-500;
+  }
+
   /* Unified card system */
   .card {
     @apply bg-white rounded-lg shadow-sm overflow-hidden transition-shadow duration-300;
@@ -79,6 +83,15 @@
 
   .section-padding {
     @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Geometric background */
+  .geometric-background {
+    @apply fixed inset-0 pointer-events-none z-0;
+  }
+
+  .geometric-background img {
+    @apply w-full h-full object-cover;
   }
 }
 

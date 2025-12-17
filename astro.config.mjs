@@ -20,16 +20,7 @@ export default defineConfig({
       include: {
         mdi: ['*'],
         'simple-icons': ['*'],
-        'skill-icons': ['*'],
-        'logos': ['*'],
-        'heroicons': ['*'],
-        'tabler': ['*'],
-        'carbon': ['*'],
-        'ph': ['*'],
-        'lucide': ['*'],
-        'fa6-brands': ['*'],
-        'fa6-solid': ['*'],
-        'fa6-regular': ['*']
+        'circle-flags': ['*']
       }
     })
   ],

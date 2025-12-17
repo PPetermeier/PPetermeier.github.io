@@ -13,20 +13,6 @@ const description = "Personal website of Philipp Petermeier, Research Associate 
 <BaseLayout title={title} description={description}>
   <Navigation />
 
-  <!-- Page Header -->
-  <header class="bg-gradient-to-br from-primary-50 via-white to-primary-50 border-b border-primary-100">
-    <div class="container-custom py-12 md:py-16">
-      <Animate type="fade-up">
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-          {profile.name}
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-600 mt-4">
-          {profile.role} | {profile.status}
-        </p>
-      </Animate>
-    </div>
-  </header>
-
   <!-- Main Content -->
   <main class="min-h-screen">
     <div class="container-custom py-8 md:py-12">
@@ -39,22 +25,29 @@ const description = "Personal website of Philipp Petermeier, Research Associate 
             <!-- Content -->
             <div class="space-y-6">
               <div>
-                <h2 class="text-3xl font-semibold mb-4">Introduction</h2>
+                <h2 class="text-3xl font-semibold mb-4">About</h2>
                 <div class="text-lg text-gray-700 leading-relaxed space-y-4">
-                  <p>Hey, nice of you to drop by.</p>
-                  <p>I'm collecting my various outputs here.</p>
-                  <p class="text-gray-900 font-semibold">
-                    Right now my main focus is finding a great team of wonderful, smart people to work with on something important.
-                  </p>
-                  <p class="text-gray-900 font-semibold">
-                    Maybe you or someone you know could fit that description? I'd love to hear from you.
-                  </p>
-                  <p>
-                    You can visit my <a href="/skills" class="text-primary-600 hover:text-primary-800 underline">Education & Skills</a> section to get an idea what I could do for you and your team.
-                  </p>
-                  <p>
-                    Otherwise I hope you find what I aggregated here interesting, useful or at least entertaining.
-                  </p>
+
+<p>
+I'm a <strong>Software Engineer and Full Stack Developer</strong>, fascinated by systems of all kinds: biological, social, technological. How they work, why they fail, how they solve information flow and how we might design better ones.
+</p>
+
+<p>
+Professionally, that means building software and working with data, mostly around machine learning and complex system modeling - business or elsewhere. The Skills section has a more detailed overview if you are interested in potential collaborations.
+</p>
+<p>
+The rest of this place collects my interests and outputs.
+A lot is me talking to myself, trying to understand things better by writing them down. <br />
+</p>
+<p>
+I'd say the main themes are philosophy and ethics, social theory and management of complexity. <br />
+Some of it's polished, some of it's exploratory.<br />
+Implicitly, it is about how to be a good person. <br />
+All of it's honest.
+</p>
+<p>
+Currently, I'm living in Berlin. If you found your way here and are still reading this, I'd love to hear from you.
+</p>
                 </div>
               </div>
 
@@ -62,7 +55,7 @@ const description = "Personal website of Philipp Petermeier, Research Associate 
               <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href="mailto:p.petermeier@posteo.de"
-                  class="btn btn-primary"
+                  class="btn btn-primary-inverse"
                 >
                   Get In Touch
                 </a>
@@ -88,11 +81,11 @@ const description = "Personal website of Philipp Petermeier, Research Associate 
             <div class="flex justify-center lg:justify-end">
               <Animate type="scale-in" delay={200}>
                 <div class="relative">
-                  <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary-400 via-primary-600 to-orange-500 p-1 hover:scale-105 transition-transform duration-300">
+                  <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-primary-400 via-primary-600 to-orange-500 p-1 hover:scale-105 transition-transform duration-300">
                     <img
                       src={profile.avatar}
                       alt={profile.name}
-                      class="w-full h-full rounded-full object-cover"
+                      class="w-full h-full rounded-full object-cover object-top"
                     />
                   </div>
                 </div>
