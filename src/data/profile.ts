@@ -248,7 +248,7 @@ Thesis: "A Deep Reinforcement Learning Environment for the Limit Orderbook Intra
       company_name: "Backwelltech, Berlin, Germany",
       company_url: "https://backwelltechcorp.com",
       company_logo: "",
-      date_start: "2024-02-05",
+      date_start: "2025-02-05",
       summary: `First software engineer in Berlin office, working directly with ML specialists to bring research into production. Built the engineering foundation from scratch and took on broad infrastructure and operations responsibilities as the company grew.
 
 - Established development standards where none existed: version control workflows, deployment pipelines, tech stacks, and cloud infrastructure

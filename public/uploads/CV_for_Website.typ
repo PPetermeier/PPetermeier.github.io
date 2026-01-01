@@ -217,7 +217,7 @@
 #entry((
   title: "Software Engineer (Founding Team)",
   subtitle: "Backwelltech, Berlin, Germany",
-  date: "Feb 2024 - Present",
+  date: "Feb 2025 - Present",
   description: [
     First software engineer in Berlin office, working directly with ML specialists to bring research into production. Built the engineering foundation from scratch and took on broad infrastructure and operations responsibilities as the company grew.
 
