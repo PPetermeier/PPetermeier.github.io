@@ -266,7 +266,9 @@
   "PyTorch & Keras",
   "NumPy & Pandas",
   "scikit-learn",
-  "Notebooks (Jupyter, Marimo)",
+  "Ray",
+  "SQLAlchemy & Alembic",
+  "Flask, Django, FastAPI",
   "Matplotlib, Seaborn & Plotly",
 ))
 
