@@ -207,7 +207,7 @@
 
    Since my B.Sc., I'm interested in data, models, and software engineering, ranging from data science and machine learning to full stack web development and cloud computing.
 
-   I work best with researchers—clarifying ideas, focusing on concrete use cases, and making results accessible.
+   I work best focused on concrete use cases, and making results accessible by building deep solutions to complex problems.
   ]
 ]
 
