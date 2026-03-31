@@ -48,6 +48,9 @@ const description = "Explore my key projects, implementations and writings.";
               <a href="#writings" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
                 Writings
               </a>
+              <a href="#talks" class="block py-2 px-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors">
+                Talks
+              </a>
             </nav>
           </Animate>
         </aside>
@@ -332,6 +335,60 @@ const description = "Explore my key projects, implementations and writings.";
                 </div>
 
               </d
+              </div>
+            </Animate>
+          </section>
+
+          <!-- Talks Section -->
+          <section id="talks" class="scroll-mt-24">
+            <Animate type="fade-up" delay={100}>
+              <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Talks</h2>
+
+                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                  <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                      <Icon name="mdi:presentation" size={32} class="text-primary-600" />
+                    </div>
+                  </div>
+
+                  <div class="flex-grow">
+                    <div class="mb-4">
+                      <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                        Feedback Loops All the Way Down
+                      </h3>
+                      <p class="text-lg text-primary-600 font-medium mb-4">
+                        The Economics of AI Safety • AI Safety Community Berlin • March 2026
+                      </p>
+                    </div>
+
+                    <div class="prose prose-gray max-w-none mb-6">
+                      <p class="text-gray-700">
+                        A talk contextualising AI safety concerns within broader economic and societal dynamics.
+                        Explores how monetary flows, market incentives, and feedback mechanisms shape the deployment
+                        and governance of AI systems — and what that means for safety.
+                      </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">AI Safety</span>
+                      <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Economics</span>
+                      <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Feedback Systems</span>
+                      <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">AI Governance</span>
+                    </div>
+
+                    <a
+                      href="/uploads/2026_03_26_AI_Safety_Economic_Impact.pdf"
+                      class="btn btn-outline inline-flex items-center gap-2"
+                      download
+                      target="_blank"
+                    >
+                      <Icon name="mdi:file-download" size={20} />
+                      Download Slides
+                    </a>
+                  </div>
+                </div>
+
               </div>
             </Animate>
           </section>
