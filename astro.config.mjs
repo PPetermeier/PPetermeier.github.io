@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import remarkMath from 'remark-math';
@@ -14,7 +14,6 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
   },
   integrations: [
-    tailwind(),
     sitemap(),
     icon({
       include: {
@@ -24,6 +23,9 @@ export default defineConfig({
       }
     })
   ],
+  vite: {
+    plugins: [tailwindcss()]
+  },
   build: {
     assets: '_astro'
   }

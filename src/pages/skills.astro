@@ -35,7 +35,7 @@ const description = "Comprehensive overview of my technical skills, education, a
         <!-- Sidebar Navigation -->
         <aside class="lg:sticky lg:top-24 h-fit">
           <Animate type="fade-in">
-            <nav class="bg-white rounded-lg shadow-sm p-6 space-y-2">
+            <nav class="bg-white rounded-lg shadow-xs p-6 space-y-2">
               <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
                 Jump to
               </h2>
@@ -64,7 +64,7 @@ const description = "Comprehensive overview of my technical skills, education, a
           <!-- Overview Section -->
           <section id="overview" class="scroll-mt-24">
             <Animate type="fade-up">
-              <div class="bg-white rounded-lg shadow-sm p-8">
+              <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
 
                 <div class="prose prose-lg max-w-none mb-8 text-gray-700 space-y-4">
@@ -102,7 +102,7 @@ const description = "Comprehensive overview of my technical skills, education, a
           <!-- Technical Skills Section -->
           <section id="technical-skills" class="scroll-mt-24">
             <Animate type="fade-up">
-              <div class="bg-white rounded-lg shadow-sm p-8">
+              <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Skills</h2>
 
                 {profile.skills.map((category) => (
@@ -146,13 +146,13 @@ const description = "Comprehensive overview of my technical skills, education, a
           <!-- Work Experience Section -->
           <section id="experience" class="scroll-mt-24">
             <Animate type="fade-up">
-              <div class="bg-white rounded-lg shadow-sm p-8">
+              <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Professional Experience</h2>
 
                 {profile.work.map((job) => (
                   <div class="mb-8 last:mb-0 p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
                     <div class="flex flex-col md:flex-row md:items-start gap-6">
-                      <div class="flex-shrink-0">
+                      <div class="shrink-0">
                         <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
                           <Icon name="mdi:briefcase" size={32} class="text-primary-600" />
                         </div>
@@ -193,13 +193,13 @@ const description = "Comprehensive overview of my technical skills, education, a
           <!-- Education Section -->
           <section id="education" class="scroll-mt-24">
             <Animate type="fade-up">
-              <div class="bg-white rounded-lg shadow-sm p-8">
+              <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Education</h2>
 
                 {profile.education.map((edu) => (
                   <div class="mb-8 last:mb-0 p-6 rounded-lg border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all">
                     <div class="flex flex-col md:flex-row md:items-start gap-6">
-                      <div class="flex-shrink-0">
+                      <div class="shrink-0">
                         <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
                           <Icon name="mdi:school" size={32} class="text-primary-600" />
                         </div>
@@ -264,7 +264,7 @@ const description = "Comprehensive overview of my technical skills, education, a
           <!-- Research Interests Section -->
           <section id="interests" class="scroll-mt-24">
             <Animate type="fade-up">
-              <div class="bg-white rounded-lg shadow-sm p-8">
+              <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Interests & Ambitions</h2>
 
                 <div class="flex flex-wrap gap-3">

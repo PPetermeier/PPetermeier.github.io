@@ -1,17 +1,88 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Custom base styles */
+@theme {
+  --color-text: #1a1a1a;
+  --color-background: #faf9f7;
+
+  --color-primary-50: #e8ede8;
+  --color-primary-100: #d1dbd1;
+  --color-primary-200: #aec2ae;
+  --color-primary-300: #87a487;
+  --color-primary-400: #6b8e6b;
+  --color-primary-500: #5a7a5a;
+  --color-primary-600: #4a5f4a;
+  --color-primary-700: #3d4e3d;
+  --color-primary-800: #344234;
+  --color-primary-900: #2a362a;
+
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
+
+  --animate-fade-in: fadeIn 0.7s ease-out;
+  --animate-slide-up: slideUp 0.7s ease-out;
+  --animate-glow-pulse: glowPulse 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-draw-line: drawLine 1s ease-out forwards;
+  --animate-gradient-shift: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(107, 142, 107, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(107, 142, 107, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-gray-900 font-sans;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold text-gray-900 leading-tight;
   }
@@ -31,21 +102,19 @@
   h4 {
     @apply text-xl md:text-2xl;
   }
-  
+
   p {
     @apply text-gray-700 leading-relaxed;
   }
-  
+
   a {
     @apply text-primary-600 hover:text-primary-800 transition-colors duration-200;
   }
 }
 
-/* Custom components */
 @layer components {
-  /* Unified button system */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm hover:shadow-md;
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-offset-2 shadow-xs hover:shadow-md;
   }
 
   .btn-primary {
@@ -64,9 +133,8 @@
     @apply bg-primary-600 text-white border-2 border-primary-600 hover:bg-white hover:text-primary-600 focus:ring-primary-500;
   }
 
-  /* Unified card system */
   .card {
-    @apply bg-white rounded-lg shadow-sm overflow-hidden transition-shadow duration-300;
+    @apply bg-white rounded-lg shadow-xs overflow-hidden transition-shadow duration-300;
   }
 
   .card-hover {
@@ -74,7 +142,7 @@
   }
 
   .card-interactive {
-    @apply shadow-sm hover:shadow-lg transition-all duration-300;
+    @apply shadow-xs hover:shadow-lg transition-all duration-300;
   }
 
   .container-custom {
@@ -85,7 +153,6 @@
     @apply py-12 md:py-16 lg:py-20;
   }
 
-  /* Geometric background */
   .geometric-background {
     @apply fixed inset-0 pointer-events-none z-0;
   }
@@ -94,5 +161,3 @@
     @apply w-full h-full object-cover;
   }
 }
-
-/* Dark mode support removed - forcing light mode */
