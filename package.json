@@ -27,7 +27,7 @@
     "canvas": "^3.2.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.3"
   },
   "overrides": {
     "katex": "^0.18.2",
