@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Animate from '../components/Animate.astro';
 import { Icon } from 'astro-icon/components';
+import { sparProject, saigeProject } from '../data/research';
 
 const title = "Projects - Philipp Petermeier";
 const description = "Explore my key projects, implementations and writings.";
@@ -58,15 +59,51 @@ const description = "Explore my key projects, implementations and writings.";
         <div class="space-y-8">
 
           <!-- Research Projects Section -->
-          <section id="research" class="scroll-mt-24">
+          <section id="research" class="scroll-mt-32">
             <Animate type="fade-up">
               <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Projects</h2>
 
 
 
+                <!-- SPAR Research Project -->
+                <article id={sparProject.id} class="scroll-mt-32 mb-12">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:chart-line" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                      <div class="mb-4">
+                        <p class="text-sm font-medium text-primary-600 mb-2">{sparProject.period} · {sparProject.status}</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">{sparProject.title}</h3>
+                        <p class="text-lg text-primary-600 font-medium">{sparProject.programme} Research Mentorship · Mentor: {sparProject.mentor}</p>
+                      </div>
+                      <div class="prose prose-gray max-w-none mb-6 space-y-4">
+                        <p class="text-gray-700">
+                          I’m participating in a project measuring historical cost and performance trends in technologies
+                          that support AI or are transformed by it. The aim is to provide an empirical basis for understanding
+                          the pace of technological progress, constraints on AI development, and the diffusion of AI capabilities.
+                        </p>
+                        <p class="text-gray-700">
+                          The project brings together longitudinal price and specification data to inform AI strategy and
+                          contribute to the Technology Observatory. It connects my interests in data work, economics,
+                          and the practical implications of technological change.
+                        </p>
+                      </div>
+                      <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Economics of AI</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Technology Forecasting</span>
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Data Analysis</span>
+                      </div>
+                      <a href={sparProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">View SPAR project</a>
+                    </div>
+                  </div>
+                </article>
+
                 <!-- SAIGE Research Project -->
-                <div class="mb-12 last:mb-0 border-t border-gray-200 pt-12">
+                <article id={saigeProject.id} class="scroll-mt-32 mb-12 border-t border-gray-200 pt-12">
                   <div class="flex flex-col md:flex-row md:items-start gap-6">
                     <div class="shrink-0">
                       <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
@@ -74,39 +111,46 @@ const description = "Explore my key projects, implementations and writings.";
                       </div>
                     </div>
 
-                    <div class="flex-grow">
+                    <div class="flex-grow min-w-0">
                       <div class="mb-4">
+                        <p class="text-sm font-medium text-primary-600 mb-2">{saigeProject.period} · {saigeProject.status}</p>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                          <a href="https://safeaigermany.org/projects-spring26/pavel2" target="_blank" rel="noopener noreferrer" class="hover:text-primary-700 underline">Economic Decision-Making Under Deep Uncertainty About AI's Trajectory</a>
+                          {saigeProject.title}
                         </h3>
                         <p class="text-lg text-primary-600 font-medium mb-4">
-                          SAIGE (<a href="https://www.safeaigermany.org/" target="_blank" rel="noopener noreferrer" class="hover:text-primary-700 underline">Safe AI Germany</a>) Research Mentorship • Mentor: Pavel Kocourek • Since April 2026
+                          {saigeProject.programme} (SAIGE) Incubator · Mentor: {saigeProject.mentor}
                         </p>
                       </div>
 
-                      <div class="prose prose-gray max-w-none mb-6">
+                      <div class="prose prose-gray max-w-none mb-6 space-y-4">
                         <p class="text-gray-700">
-                          Working towards a tractable, coherent model of plausible AI futures along their breadth and the genuine Knightian
-                          uncertainty surrounding them and how that uncertainty shapes expectations and thus behavior.
-                          <br />
-                          Through that channel, the framework aims to illuminate the decision problems faced by investors and policymakers
-                          alike: how the perceived range of trajectories, risk aversion, and ambiguity aversion jointly determine prudent
-                          allocations of savings, capital, attention, and public resources under deep uncertainty about transformative AI.
-                          <br />
-                          Intended outputs: a research blog post(s), potentially a technical working paper.
+                          I explored how beliefs about AI’s future, uncertainty, and personal values influence economic
+                          decisions. We used economic modeling and decision theory to examine how widely differing futures
+                          change the choices people face, including how they invest in their careers.
+                        </p>
+                        <p class="text-gray-700">
+                          The project produced Career Compass, an interactive tool that makes users’ beliefs and values
+                          explicit to explore career choices across possible AI futures. I documented the reasoning,
+                          results, and simplifying assumptions in a report, and presented the work at European Frontier AI Safety Day.
                         </p>
                       </div>
 
-                      <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">AI Safety</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Economic Theory</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Decision Theory</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Transformative AI</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Ambiguity Aversion</span>
                       </div>
+                      <div class="flex flex-wrap gap-4">
+                        <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read project report</a>
+                        <a href={saigeProject.app.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Explore {saigeProject.app.title}</a>
+                        <a href={`#${saigeProject.presentation.id}`} class="btn btn-outline">About the presentation</a>
+                        <a href={saigeProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Original programme description</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </article>
 
                 <!-- Bachelor Thesis -->
                 <div class="mb-12 last:mb-0">
@@ -167,7 +211,7 @@ const description = "Explore my key projects, implementations and writings.";
           </section>
 
           <!-- Technical Projects Section -->
-          <section id="technical" class="scroll-mt-24">
+          <section id="technical" class="scroll-mt-32">
             <Animate type="fade-up" delay={100}>
               <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Projects</h2>
@@ -194,20 +238,20 @@ const description = "Explore my key projects, implementations and writings.";
                         <p class="text-gray-700">
                           Designed and developed a modern portfolio website using Astro, migrated from Hugo. Features a unified visual design system,
                           component-based architecture, and responsive design with scroll-triggered animations.
-                          <br /> You are currently viewing the latest version!<br />
-                          <a href="https://github.com/PPetermeier/PPetermeier.github.io" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
-                            <Icon name="mdi:github" size={16} class="inline" />
-                            Repository
-                          </a>
+                          <br /> You are currently viewing the latest version!
                         </p>
                       </div>
 
-                      <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Astro</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Responsive Design</span>
                       </div>
+                      <a href="https://github.com/PPetermeier/PPetermeier.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <Icon name="mdi:github" size={16} />
+                        Repository
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -233,20 +277,19 @@ const description = "Explore my key projects, implementations and writings.";
                           Open source scaffold for human-AI collaboration (specifically LLMs).
                           <br />
                           Part project management and documentation template for collaborative knowledge work, part user guide for best practices in human-AI interaction as well as self directed experimentation and learning
-                           <br />
-                        <a href="https://github.com/PPetermeier/HumanAIColaborationFramework" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
-                          <Icon name="mdi:github" size={16} class="inline" />
-                          Repository
-                        </a>
-                            </p>
+                        </p>
                       </div>
 
-                      <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">LLMs</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Agentic Memory</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Markdown based notations</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Meta Cognition and Cooperation</span>
                       </div>
+                      <a href="https://github.com/PPetermeier/HumanAIColaborationFramework" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <Icon name="mdi:github" size={16} />
+                        Repository
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -273,21 +316,21 @@ const description = "Explore my key projects, implementations and writings.";
                         Leveraged Shiny for Python to create an interactive web application that tracks and visualizes the data from the <a href="https://www.kielinstitut.de/topics/war-against-ukraine/ukraine-support-tracker/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Ukraine Support Tracker</a> of the Kiel Institute for the World Economy (IfW)
                         <br />
                         Including no-code ETL (Excel to duckdb) pipeline, interactive visualizations, and deployment on shinyapps.io.
-                        <br />
-                        <a href="https://github.com/PPetermeier/ShinyUkraine" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
-                          <Icon name="mdi:github" size={16} class="inline" />
-                          Repository
-                        </a>
-                        ,
-                        <a href="https://infornomics.shinyapps.io/shinyukraine/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Hosting</a>
-                             </p>
+                        </p>
                       </div>
 
-                      <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">duckdb</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">PyShiny</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Dashboards</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">ETL</span>
+                      </div>
+                      <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/PPetermeier/ShinyUkraine" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                          <Icon name="mdi:github" size={16} />
+                          Repository
+                        </a>
+                        <a href="https://infornomics.shinyapps.io/shinyukraine/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Hosting</a>
                       </div>
                     </div>
                   </div>
@@ -334,9 +377,65 @@ const description = "Explore my key projects, implementations and writings.";
           </section>
 
           <!-- Writings Section -->
-          <section id="writings" class="scroll-mt-24">
+          <section id="writings" class="scroll-mt-32">
             <Animate type="fade-up" delay={100}>
               <div class="bg-white rounded-lg shadow-xs p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Writings</h2>
+
+                <article id={saigeProject.report.id} class="scroll-mt-32 mb-12 pb-12 border-b border-gray-200">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:book-open-page-variant-outline" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                      <h3 class="text-2xl font-bold text-gray-900 mb-2">{saigeProject.report.title}</h3>
+                      <p class="text-lg text-primary-600 font-medium mb-4">
+                        Project report on Substack · <time datetime={saigeProject.report.datetime}>{saigeProject.report.date}</time>
+                      </p>
+                      <p class="text-gray-700 mb-6">
+                        A reflection on my Safe AI Germany incubator project: how beliefs about AI’s future shape economic
+                        decisions, how we translated that reasoning into Career Compass, and where simplifying assumptions
+                        expose tensions between economic modeling and personal values. Includes the presentation material
+                        and questions left open for further work.
+                      </p>
+                      <div class="flex flex-wrap gap-4">
+                        <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                          <Icon name="simple-icons:substack" size={16} />
+                          Read on Substack
+                        </a>
+                        <a href={`#${saigeProject.id}`} class="btn btn-outline">Related research project</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article id="whats-in-a-job-anyway" class="scroll-mt-32 mb-12 pb-12 border-b border-gray-200">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:book-open-page-variant-outline" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                      <h3 class="text-2xl font-bold text-gray-900 mb-2">What's in a job, anyway?</h3>
+                      <p class="text-lg text-primary-600 font-medium mb-4">
+                        Essay on Substack · <time datetime="2026-05-28">28 May 2026</time>
+                      </p>
+                      <p class="text-gray-700 mb-6">
+                        An exploration of AI’s impact on work through the interconnected tasks that make up a job.
+                        Examines how workflow bottlenecks and differences between human and AI capabilities can
+                        lead to displacement, changing roles, or higher productivity.
+                      </p>
+                      <a href="https://infornomics.substack.com/p/whats-in-a-job-anyway" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <Icon name="simple-icons:substack" size={16} />
+                        Read on Substack
+                      </a>
+                    </div>
+                  </div>
+                </article>
+
               <!-- Time & Generations Section -->
                   <div class="flex flex-col md:flex-row md:items-start gap-6">
                     <div class="shrink-0">
@@ -359,21 +458,20 @@ const description = "Explore my key projects, implementations and writings.";
                           focusing on its implications for sustainable development and intergenerational equity.
                           <br />
                           I think the review provides a good window into my own thinking through sharing how I approached the book over time.
-                          <br />
-                          <a href="https://infornomics.substack.com/p/reading-partha-dasgupta-time-and" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-1">
-                            <Icon name="simple-icons:substack" size={16} class="inline" />
-                            Read on Substack
-                          </a>
-                            </p>
+                        </p>
                       </div>
 
-                      <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Sustainability</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Economics</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Mathematical modeling</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Political Philosophy</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Ethics</span>
                       </div>
+                      <a href="https://infornomics.substack.com/p/reading-partha-dasgupta-time-and" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <Icon name="simple-icons:substack" size={16} />
+                        Read on Substack
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -382,10 +480,36 @@ const description = "Explore my key projects, implementations and writings.";
           </section>
 
           <!-- Talks Section -->
-          <section id="talks" class="scroll-mt-24">
+          <section id="talks" class="scroll-mt-32">
             <Animate type="fade-up" delay={100}>
               <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8">Talks</h2>
+
+                <article id={saigeProject.presentation.id} class="scroll-mt-32 mb-12 pb-12 border-b border-gray-200">
+                  <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="shrink-0">
+                      <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <Icon name="mdi:presentation" size={32} class="text-primary-600" />
+                      </div>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                      <h3 class="text-2xl font-bold text-gray-900 mb-2">{saigeProject.presentation.title}</h3>
+                      <p class="text-lg text-primary-600 font-medium mb-4">
+                        {saigeProject.presentation.event} · Berlin · <time datetime={saigeProject.presentation.datetime}>{saigeProject.presentation.date}</time>
+                      </p>
+                      <p class="text-gray-700 mb-6">
+                        A five-minute presentation of our work on economic decision-making under uncertainty about AI’s
+                        future, including the reasoning behind Career Compass. Presented at the incubator project showcase
+                        organised by Safe AI Germany, with Foresight Institute as event co-host.
+                      </p>
+                      <div class="flex flex-wrap gap-4">
+                        <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Report &amp; presentation material</a>
+                        <a href={saigeProject.presentation.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Event details</a>
+                        <a href={`#${saigeProject.id}`} class="btn btn-outline">Related research project</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
 
                 <div class="flex flex-col md:flex-row md:items-start gap-6">
                   <div class="shrink-0">
@@ -449,9 +573,9 @@ const description = "Explore my key projects, implementations and writings.";
     scroll-behavior: smooth;
   }
 
-  /* Smooth scroll offset for fixed header */
-  .scroll-mt-24 {
-    scroll-margin-top: 6rem;
+  /* Allow for the taller tablet navigation and the entrance animation. */
+  .scroll-mt-32 {
+    scroll-margin-top: 8rem;
   }
 </style>
 

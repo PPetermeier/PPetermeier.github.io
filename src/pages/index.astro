@@ -5,9 +5,10 @@ import Animate from '../components/Animate.astro';
 import Footer from '../components/Footer.astro';
 import { Icon } from 'astro-icon/components';
 import { profile } from '../data/profile';
+import { sparProject, saigeProject } from '../data/research';
 
 const title = "Philipp Petermeier";
-const description = "Personal website of Philipp Petermeier, Research Associate at Fraunhofer IEE. Explore my work in Deep Reinforcement Learning, Energy Systems, and Data Science. Currently seeking opportunities to collaborate with innovative teams on important challenges.";
+const description = "Philipp Petermeier, software engineer and full stack developer in Berlin. Explore my work in machine learning, complex systems, and the economics of AI.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -29,7 +30,7 @@ const description = "Personal website of Philipp Petermeier, Research Associate 
                 <div class="text-lg text-gray-700 leading-relaxed space-y-4">
 
 <p>
-I'm a <strong>Software Engineer and Full Stack Developer</strong>, fascinated by systems of all kinds: biological, social, technological. How they work, why they fail, how they solve information flow and how we might design better ones.
+I'm a <strong>Research Software Engineer and Full Stack Developer</strong>, fascinated by systems of all kinds: biological, social, technological. How they work, why they fail, how they solve information flow and how we might design better ones.
 </p>
 
 <p>
@@ -43,7 +44,7 @@ A lot is me talking to myself, trying to understand things better by writing the
 I'd say the main themes are philosophy and ethics, social theory and management of complexity. <br />
 </p>
 <p>
-Currently, I'm living in Berlin and working on a "Economic decision-making under deep uncertainty of AIs future trajectory", a project of the incubator by Safe AI Germany.
+I'm based in Berlin, where I also research AI's economic implications: how we make decisions under uncertainty and how technological progress shapes the futures we face.
 </p>
                 </div>
               </div>
@@ -52,7 +53,7 @@ Currently, I'm living in Berlin and working on a "Economic decision-making under
               <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href="mailto:p.petermeier@posteo.de"
-                  class="btn btn-primary-inverse"
+                  class="btn btn-outline"
                 >
                   Get In Touch
                 </a>
@@ -91,6 +92,37 @@ Currently, I'm living in Berlin and working on a "Economic decision-making under
           </div>
         </div>
       </Animate>
+
+      <section aria-labelledby="recent-research-heading" class="mt-8 md:mt-12">
+        <Animate type="fade-up">
+          <div class="bg-white rounded-lg shadow-xs p-8 md:p-12 border border-gray-100">
+            <h2 id="recent-research-heading" class="text-3xl font-semibold mb-8">Current &amp; recent research</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <article class="min-w-0 flex flex-col">
+                <p class="text-sm font-medium text-primary-600 mb-3">{sparProject.period} · {sparProject.status}</p>
+                <h3 class="text-xl font-semibold mb-4">
+                  Current — {sparProject.programme}
+                </h3>
+                <p class="mb-5 flex-grow">{sparProject.summary}</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href={`/projects#${sparProject.id}`} class="btn btn-outline">About the SPAR project</a>
+                </div>
+              </article>
+              <article class="min-w-0 flex flex-col border-t border-gray-200 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-8">
+                <p class="text-sm font-medium text-primary-600 mb-3">{saigeProject.period} · {saigeProject.status}</p>
+                <h3 class="text-xl font-semibold mb-4">
+                  {saigeProject.status} — {saigeProject.programme}
+                </h3>
+                <p class="mb-5 flex-grow">{saigeProject.summary}</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read project report</a>
+                  <a href={`/projects#${saigeProject.id}`} class="btn btn-outline">About the project</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </Animate>
+      </section>
 
     </div>
   </main>
