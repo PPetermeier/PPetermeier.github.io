@@ -1,0 +1,41 @@
+---
+import ResearchProjectLayout from '../../layouts/ResearchProjectLayout.astro';
+import { saigeProject, sparProject } from '../../data/research';
+---
+
+<ResearchProjectLayout project={saigeProject}>
+  <section aria-labelledby="question-heading">
+    <h2 id="question-heading">The question</h2>
+    <p>How should people make economic decisions when plausible AI futures differ radically? The project examined how expectations, uncertainty, and personal values shape those choices, including career decisions.</p>
+  </section>
+
+  <section aria-labelledby="contribution-heading">
+    <h2 id="contribution-heading">My contribution and approach</h2>
+    <p>I participated in the Safe AI Germany incubator under Pavel Kocourek’s mentorship, bringing an economics and technical perspective. We combined economic modeling and decision theory to explore how different beliefs change the choices available to an individual.</p>
+    <p>I wrote the project report and presented our work at European Frontier AI Safety Day in Berlin on <time datetime={saigeProject.presentation.datetime}>{saigeProject.presentation.date}</time>.</p>
+  </section>
+
+  <section aria-labelledby="outputs-heading">
+    <h2 id="outputs-heading">From research to Career Compass</h2>
+    <p>The project produced Career Compass, a web application that asks users to make their beliefs and values explicit and compares career options across possible AI futures. The report documents the reasoning and includes the presentation material.</p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      <a href={saigeProject.app.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Explore {saigeProject.app.title}</a>
+      <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read project report</a>
+      <a href={saigeProject.presentation.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Presentation event</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="limitations-heading">
+    <h2 id="limitations-heading">What the model leaves open</h2>
+    <p>Making the tool usable required simplifying the possible futures and career choices. Expressing non-monetary values in monetary terms also exposed tensions between economic modeling and ethics. The results depend on those assumptions and on the beliefs supplied by the user.</p>
+  </section>
+
+  <section aria-labelledby="related-heading">
+    <h2 id="related-heading">Related work</h2>
+    <p>My current SPAR project approaches AI’s economic implications through empirical research on technological progress.</p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      <a href={sparProject.path} class="btn btn-outline">SPAR: technology cost trajectories</a>
+      <a href={saigeProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Original programme description</a>
+    </div>
+  </section>
+</ResearchProjectLayout>

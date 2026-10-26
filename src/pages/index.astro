@@ -7,11 +7,11 @@ import { Icon } from 'astro-icon/components';
 import { profile } from '../data/profile';
 import { sparProject, saigeProject } from '../data/research';
 
-const title = "Philipp Petermeier";
-const description = "Philipp Petermeier, software engineer and full stack developer in Berlin. Explore my work in machine learning, complex systems, and the economics of AI.";
+const title = `${profile.name} — ${profile.headline}`;
+const description = `${profile.name}. ${profile.bio}`;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} pageType="ProfilePage">
   <Navigation />
 
   <!-- Main Content -->
@@ -26,11 +26,13 @@ const description = "Philipp Petermeier, software engineer and full stack develo
             <!-- Content -->
             <div class="space-y-6">
               <div>
-                <h2 class="text-3xl font-semibold mb-4">About</h2>
+                <p class="text-sm font-medium text-primary-600 mb-3">{profile.headline}</p>
+                <h1 class="text-3xl md:text-4xl font-semibold mb-6">{profile.name}</h1>
+                <h2 class="sr-only">About</h2>
                 <div class="text-lg text-gray-700 leading-relaxed space-y-4">
 
 <p>
-I'm a <strong>Research Software Engineer and Full Stack Developer</strong>, fascinated by systems of all kinds: biological, social, technological. How they work, why they fail, how they solve information flow and how we might design better ones.
+I'm a <strong>{profile.role}</strong>, fascinated by systems of all kinds: biological, social, technological. How they work, why they fail, how they solve information flow and how we might design better ones.
 </p>
 
 <p>
@@ -38,6 +40,7 @@ Professionally, that means building software and working with data, mostly aroun
 </p>
 <p>
 The rest of this place collects my interests and outputs.
+I publish my writing as {profile.alternateName}.
 A lot is me talking to myself, trying to understand things better by writing them down. <br />
 </p>
 <p>
@@ -50,7 +53,9 @@ I'm based in Berlin, where I also research AI's economic implications: how we ma
               </div>
 
               <!-- CTA Buttons -->
-              <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <div class="flex flex-wrap gap-4 pt-4">
+                <a href="/skills/" class="btn btn-outline">Skills &amp; experience</a>
+                <a href="/projects/" class="btn btn-outline">Research &amp; projects</a>
                 <a
                   href="mailto:p.petermeier@posteo.de"
                   class="btn btn-outline"
@@ -105,7 +110,7 @@ I'm based in Berlin, where I also research AI's economic implications: how we ma
                 </h3>
                 <p class="mb-5 flex-grow">{sparProject.summary}</p>
                 <div class="flex flex-wrap gap-4">
-                  <a href={`/projects#${sparProject.id}`} class="btn btn-outline">About the SPAR project</a>
+                  <a href={sparProject.path} class="btn btn-outline">About the SPAR project</a>
                 </div>
               </article>
               <article class="min-w-0 flex flex-col border-t border-gray-200 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-8">
@@ -116,7 +121,7 @@ I'm based in Berlin, where I also research AI's economic implications: how we ma
                 <p class="mb-5 flex-grow">{saigeProject.summary}</p>
                 <div class="flex flex-wrap gap-4">
                   <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read project report</a>
-                  <a href={`/projects#${saigeProject.id}`} class="btn btn-outline">About the project</a>
+                  <a href={saigeProject.path} class="btn btn-outline">About the project</a>
                 </div>
               </article>
             </div>

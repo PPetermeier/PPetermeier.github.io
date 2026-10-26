@@ -1,0 +1,6 @@
+# Public pages are open to search crawlers, including OAI-SearchBot.
+# This preserves the site's existing open crawling policy.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.infornomics.de/sitemap-index.xml

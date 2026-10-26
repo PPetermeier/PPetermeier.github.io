@@ -12,11 +12,86 @@ export interface Props {
   title: string;
   description?: string;
   image?: string;
+  pageType?: 'WebPage' | 'ProfilePage' | 'CollectionPage';
+  dateModified?: string;
+  about?: { name: string; url: string };
+  breadcrumbs?: { name: string; path: string }[];
 }
 
-const { title, description = profile.bio, image = "/media/og-image.png" } = Astro.props;
+const {
+  title,
+  description = profile.bio,
+  image = '/media/og-image.png',
+  pageType = 'WebPage',
+  dateModified,
+  about,
+  breadcrumbs = [],
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteURL = new URL('/', Astro.site);
+const personID = new URL('#person', siteURL).href;
+const websiteID = new URL('#website', siteURL).href;
+const pageID = new URL('#webpage', canonicalURL).href;
+const breadcrumbID = new URL('#breadcrumbs', canonicalURL).href;
+const imageAlt = `${profile.name} — software engineering, machine learning and complex systems`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': personID,
+      name: profile.name,
+      alternateName: profile.alternateName,
+      url: siteURL.href,
+      image: new URL(profile.avatar, siteURL).href,
+      description: profile.bio,
+      jobTitle: profile.role,
+      homeLocation: { '@type': 'Place', name: profile.location },
+      sameAs: profile.profiles.filter(({ url }) => url.startsWith('https://')).map(({ url }) => url),
+      knowsAbout: profile.interests,
+      alumniOf: profile.education.map(({ institution, company_url }) => ({
+        '@type': 'EducationalOrganization', name: institution, url: company_url,
+      })),
+      worksFor: profile.work.filter(({ date_end }) => !date_end).map(({ company_name, company_url }) => ({
+        '@type': 'Organization', name: company_name, url: company_url,
+      })),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteID,
+      name: profile.alternateName,
+      alternateName: profile.name,
+      url: siteURL.href,
+      publisher: { '@id': personID },
+      inLanguage: 'en',
+    },
+    {
+      '@type': pageType,
+      '@id': pageID,
+      url: canonicalURL.href,
+      name: title,
+      description,
+      isPartOf: { '@id': websiteID },
+      author: { '@id': personID },
+      about: about ? { '@type': 'Thing', ...about } : { '@id': personID },
+      mainEntity: pageType === 'ProfilePage' ? { '@id': personID } : undefined,
+      dateModified,
+      inLanguage: 'en',
+      breadcrumb: breadcrumbs.length ? { '@id': breadcrumbID } : undefined,
+    },
+    ...(breadcrumbs.length ? [{
+      '@type': 'BreadcrumbList',
+      '@id': breadcrumbID,
+      itemListElement: breadcrumbs.map(({ name, path }, index) => ({
+        '@type': 'ListItem', position: index + 1, name, item: new URL(path, siteURL).href,
+      })),
+    }] : []),
+  ],
+};
+// Escape markup delimiters so content cannot terminate the JSON-LD script.
+const structuredDataJSON = JSON.stringify(structuredData).replace(/</g, '\\u003c');
 ---
 
 <!DOCTYPE html>
@@ -24,8 +99,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="author" content={profile.name} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- SEO -->
@@ -38,7 +114,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
-    <meta property="og:site_name" content="Philipp Petermeier" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:site_name" content={profile.alternateName} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,39 +123,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     
     <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Philipp Petermeier",
-        "url": "https://www.infornomics.de",
-        "image": "https://www.infornomics.de/media/icon.png",
-        "sameAs": [
-          "https://github.com/PPetermeier",
-          "https://x.com/infornomics",
-          "https://www.linkedin.com/in/philipp-petermeier-6ba469229",
-          "https://infornomics.substack.com/"
-        ],
-        "jobTitle": "Software Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Backwelltech"
-        },
-        "alumniOf": {
-          "@type": "Organization",
-          "name": "Technische Hochschule Mittelhessen"
-        },
-        "knowsAbout": [
-          "Software Engineering",
-          "Full Stack Development",
-          "Machine Learning",
-          "Data Science",
-          "Python"
-        ]
-      }
-    </script>
+    <script is:inline type="application/ld+json" set:html={structuredDataJSON} />
   </head>
 
   <body class="relative bg-background min-h-screen">

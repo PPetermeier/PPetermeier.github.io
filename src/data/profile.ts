@@ -2,6 +2,9 @@ export interface Profile {
   name: string;
   firstName: string;
   lastName: string;
+  alternateName: string;
+  headline: string;
+  location: string;
   role: string;
   status: string;
   avatar: string;
@@ -64,10 +67,13 @@ export const profile: Profile = {
   name: "Philipp Petermeier",
   firstName: "Philipp",
   lastName: "Petermeier",
-  role: "Software Engineer and Full Stack Developer",
+  alternateName: "Infornomics",
+  headline: "Software Engineering & AI Economics",
+  location: "Berlin, Germany",
+  role: "Research Software Engineer and Full Stack Developer",
   status: "", // unused, kept for interface compatibility
   avatar: "/media/profile_pic.jpg",
-  bio: "Software Engineer and Full Stack Developer based in Berlin. Building software and working with data, mostly around machine learning and complex system modeling.",
+  bio: "Research software engineer and full stack developer in Berlin, working across machine learning, complex systems, and the economics of AI.",
   interests: [
     "Data Science and Machine Learning",
     "Reinforcement Learning",

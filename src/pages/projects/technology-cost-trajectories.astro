@@ -1,0 +1,31 @@
+---
+import ResearchProjectLayout from '../../layouts/ResearchProjectLayout.astro';
+import { sparProject, saigeProject } from '../../data/research';
+---
+
+<ResearchProjectLayout project={sparProject}>
+  <section aria-labelledby="question-heading">
+    <h2 id="question-heading">The question</h2>
+    <p>How quickly are the technologies that support AI, or will be transformed by it, improving? Historical costs and performance can help identify constraints on AI development and understand how capabilities might spread through the economy.</p>
+  </section>
+
+  <section aria-labelledby="approach-heading">
+    <h2 id="approach-heading">The project’s approach</h2>
+    <p>The programme combines historical prices with technical specifications to construct technology cost and performance trajectories. Its methodology includes defining product categories, collecting and checking archival data, choosing performance measures, and estimating trends.</p>
+    <p>The intended datasets contribute to the Technology Observatory, an effort to build an empirical foundation for understanding technological change.</p>
+  </section>
+
+  <section aria-labelledby="participation-heading">
+    <h2 id="participation-heading">My participation</h2>
+    <p>I’m participating in the Fall 2026 SPAR cohort under Isaak Mengesha’s mentorship. The work connects my interests in data, economic reasoning, and AI’s wider implications.</p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      <a href={sparProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">View the SPAR project brief</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="related-heading">
+    <h2 id="related-heading">Related work</h2>
+    <p>My completed Safe AI Germany project explored how uncertainty about AI’s future influences economic and career decisions.</p>
+    <a href={saigeProject.path} class="btn btn-outline mt-6">AI decision-making &amp; Career Compass</a>
+  </section>
+</ResearchProjectLayout>

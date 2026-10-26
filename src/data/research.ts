@@ -1,5 +1,10 @@
 export const sparProject = {
   id: 'spar-cost-trajectories',
+  path: '/projects/technology-cost-trajectories/',
+  pageTitle: 'AI Technology Cost Trajectories — Philipp Petermeier',
+  description: 'Philipp Petermeier’s ongoing SPAR research on historical technology costs and performance, technological progress, and the economics of AI.',
+  updated: '2026-10-26',
+  updatedLabel: '26 October 2026',
   title: 'Mapping Cost Trajectories of AI-Adjacent Technologies',
   programme: 'SPAR',
   period: 'Fall 2026',
@@ -11,6 +16,11 @@ export const sparProject = {
 
 export const saigeProject = {
   id: 'saige-ai-decisions',
+  path: '/projects/ai-decision-making/',
+  pageTitle: 'AI Decision-Making & Career Compass — Philipp Petermeier',
+  description: 'Philipp Petermeier’s Safe AI Germany project on decisions under uncertainty about AI, with Career Compass, a project report, and presentation material.',
+  updated: '2026-10-26',
+  updatedLabel: '26 October 2026',
   title: 'Economic Decision-Making Under Deep Uncertainty About AI’s Trajectory',
   programme: 'Safe AI Germany',
   period: 'April–September 2026',
@@ -38,3 +48,5 @@ export const saigeProject = {
     url: 'https://safeaigermany.org/efais2026/',
   },
 } as const;
+
+export type ResearchProject = typeof sparProject | typeof saigeProject;

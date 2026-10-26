@@ -6,11 +6,11 @@ import Animate from '../components/Animate.astro';
 import { Icon } from 'astro-icon/components';
 import { sparProject, saigeProject } from '../data/research';
 
-const title = "Projects - Philipp Petermeier";
-const description = "Explore my key projects, implementations and writings.";
+const title = "Research & Software Projects — Philipp Petermeier";
+const description = "Philipp Petermeier’s research and software projects: AI economics, Career Compass, technology forecasting, reinforcement learning, writings, and talks.";
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} pageType="CollectionPage">
   <Navigation />
 
   <!-- Page Header -->
@@ -97,7 +97,10 @@ const description = "Explore my key projects, implementations and writings.";
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Technology Forecasting</span>
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Data Analysis</span>
                       </div>
-                      <a href={sparProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">View SPAR project</a>
+                      <div class="flex flex-wrap gap-4">
+                        <a href={sparProject.path} class="btn btn-outline">Project details</a>
+                        <a href={sparProject.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">View SPAR project</a>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -143,6 +146,7 @@ const description = "Explore my key projects, implementations and writings.";
                         <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">Ambiguity Aversion</span>
                       </div>
                       <div class="flex flex-wrap gap-4">
+                        <a href={saigeProject.path} class="btn btn-outline">Project details</a>
                         <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read project report</a>
                         <a href={saigeProject.app.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Explore {saigeProject.app.title}</a>
                         <a href={`#${saigeProject.presentation.id}`} class="btn btn-outline">About the presentation</a>
@@ -405,7 +409,7 @@ const description = "Explore my key projects, implementations and writings.";
                           <Icon name="simple-icons:substack" size={16} />
                           Read on Substack
                         </a>
-                        <a href={`#${saigeProject.id}`} class="btn btn-outline">Related research project</a>
+                        <a href={saigeProject.path} class="btn btn-outline">Related research project</a>
                       </div>
                     </div>
                   </div>
@@ -505,7 +509,7 @@ const description = "Explore my key projects, implementations and writings.";
                       <div class="flex flex-wrap gap-4">
                         <a href={saigeProject.report.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Report &amp; presentation material</a>
                         <a href={saigeProject.presentation.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Event details</a>
-                        <a href={`#${saigeProject.id}`} class="btn btn-outline">Related research project</a>
+                        <a href={saigeProject.path} class="btn btn-outline">Related research project</a>
                       </div>
                     </div>
                   </div>
@@ -568,11 +572,6 @@ const description = "Explore my key projects, implementations and writings.";
 </BaseLayout>
 
 <style>
-  /* Smooth scroll behavior */
-  html {
-    scroll-behavior: smooth;
-  }
-
   /* Allow for the taller tablet navigation and the entrance animation. */
   .scroll-mt-32 {
     scroll-margin-top: 8rem;

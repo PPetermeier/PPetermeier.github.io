@@ -1,0 +1,72 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/profile';
+import type { ResearchProject } from '../data/research';
+
+interface Props { project: ResearchProject }
+const { project } = Astro.props;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Projects', path: '/projects/' },
+  { name: project.programme, path: project.path },
+];
+---
+
+<BaseLayout
+  title={project.pageTitle}
+  description={project.description}
+  dateModified={project.updated}
+  about={{ name: project.title, url: project.url }}
+  breadcrumbs={breadcrumbs}
+>
+  <Navigation />
+  <main>
+    <header class="bg-gradient-to-br from-primary-50 via-white to-primary-50 border-b border-primary-100">
+      <div class="container-custom py-8 md:py-12">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-3 mb-8">
+          <a href="/" class="btn btn-outline">Home</a>
+          <a href="/projects/" class="btn btn-outline">Projects</a>
+          <span class="text-sm text-gray-600" aria-current="page">{project.programme}</span>
+        </nav>
+        <p class="font-medium text-primary-600 mb-3">{project.programme} · {project.period} · {project.status}</p>
+        <h1 class="text-3xl md:text-5xl font-bold max-w-4xl mb-6">{project.title}</h1>
+        <p class="text-lg max-w-3xl mb-4">{project.summary}</p>
+        <p class="text-sm text-gray-600">By {profile.name} · Updated <time datetime={project.updated}>{project.updatedLabel}</time></p>
+      </div>
+    </header>
+
+    <div class="container-custom py-8 md:py-12">
+      <article class="max-w-4xl bg-white rounded-lg shadow-xs border border-gray-100 p-6 sm:p-8 md:p-12">
+        <dl class="grid sm:grid-cols-2 gap-4 pb-8 border-b border-gray-200 mb-8">
+          <div>
+            <dt class="text-sm text-gray-600 mb-1">Programme</dt>
+            <dd class="font-medium">{project.programme}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gray-600 mb-1">Mentor</dt>
+            <dd class="font-medium">{project.mentor}</dd>
+          </div>
+        </dl>
+        <div class="project-copy space-y-8">
+          <slot />
+        </div>
+        <section aria-labelledby="collaborate-heading" class="border-t border-gray-200 pt-8 mt-10">
+          <h2 id="collaborate-heading" class="text-2xl font-semibold mb-4">Work with me</h2>
+          <p class="mb-6">I’m interested in conversations about research, software engineering, and the economics of AI.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="mailto:p.petermeier@posteo.de" class="btn btn-outline">Get in touch</a>
+            <a href="/skills/" class="btn btn-outline">Skills &amp; experience</a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .project-copy :global(h2) { font-size: 1.5rem; margin-bottom: 1rem; }
+  .project-copy :global(p + p) { margin-top: 1rem; }
+</style>
